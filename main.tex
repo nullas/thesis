@@ -109,7 +109,7 @@
 {{\bf \LARGE 致\ 谢\\}}
 \end{center}
 \vspace{2.5cm}
- 衷心感谢黄文教授.本文是在他的悉心指导下完成的.\\
+ 衷心感谢黄文教授.本文是在他的悉心指导下完成的.
  谢谢四年来我所有的任课老师.是他们给了我真正的数学启蒙,使我得以窥见数学的美妙.
 \begin{center}
 \vspace{5cm}\hspace{9cm}2011年6月
@@ -139,7 +139,7 @@
 This article is fucused on the uniform additive and subadditive ergodic theorem on the a subshift over a finite alphabet. First we introduce the  preserving measure and unique ergodicity on general dynamic system. Then we give the description of minimal and uniquely ergodic subshift. Last we prove the uniform additive and subadditive ergodic theorem on symbol system.
 
 \medskip
-{\bf Keywords}:\emph{minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem,}
+{\bf Keywords}:\emph{minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{不变测度与唯一遍历}
@@ -189,7 +189,7 @@ $(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间，$T:X_1 \right
 
 遍历有几个等价的条件，如下。
 \begin{theorem}
-$T:X \rightarrow X$是概率空间$(X,\ms{B},m)$上自身到自身的保测变换。一下条件是等价的：
+$T:X \rightarrow X$是概率空间$(X,\ms{B},m)$上自身到自身的保测变换。以下条件是等价的：
 \begin{enumerate}[(i)]
 \item $T$是遍历的。
 \item 如果$B\in\ms B$满足$m(B\bigtriangleup T^{-1}(B))=0$,那么$m(B)=0$或者$m(B)=1$。
@@ -203,7 +203,7 @@ $T:X \rightarrow X$是概率空间$(X,\ms{B},m)$上自身到自身的保测变�
 为Birkhoff遍历定理,我们引入条件期望的概念.
 \begin{definition}
 $(X,\ms{B},m)$为一个概率测度,$\ms C$为一个$\ms B$的子$\sigma$代数.
-定义条件期望$$\mathbb{E}(\cdot|\ms{C}):L^1(X,\ms{B},m)\rightarrow L^1(X,\ms{C},m)$$.如果$f\equiv 0$,那么定义$\mathbb{E}(f|\ms{C})=0$;如果$f$非负且%
+定义条件期望$$\mathbb{E}(\cdot|\ms{C}):L^1(X,\ms{B},m)\rightarrow L^1(X,\ms{C},m).$$如果$f\equiv 0$,那么定义$\mathbb{E}(f|\ms{C})=0$;如果$f$非负且%
 $a=\int_X f \mathrm d m>0$,那么$\mu_f(C)=a^{-1}\int_C f\mathrm d m$.
 由Radon-Nikodym定理,存在函数$\mathbb{E}(f|\ms{C})\in L^1(X,\ms B,m)$使得%
 $\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.这个$\mathbb{E}(f|\ms{C})$在a.e.的意义下是唯一的.对任意复函数只需对实虚正负部分别这样做.这样就对任意$f\in L^1(X,\ms b,m)$得到了a.e唯一的$\mathbb{E}(f|\ms{C})$满足$$\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$$
@@ -220,9 +220,13 @@ $\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.
 \section{极小性}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}
-动力系统$(X,T)$称为极小的，如果他不真包含任何闭不变子空间。如果$(Y,T)$是极小的子系统，就称为$X$的极小集。极小集忠的点称为极小点。
+动力系统$(X,T)$称为极小的，如果他不真包含任何闭不变子空间。如果$(Y,T)$是极小的子系统，就称为$X$的极小集。极小集中的点称为极小点。
 \end{definition}
-以下是动力系统中熟知的极小性等价定理。
+为了本节的主要定理,我们引入轨道:
+\begin{definition}
+我们记$x$的轨道为$orb(x,T)=\{T^kx:k\in\mathbb{N}\}.$
+\end{definition}
+下面是熟知的动力系统中极小性的等价定理:
 \begin{theorem}
 \label{t:minimal}
 对于动力系统$(X,T)$，以下命题等价：
@@ -233,7 +237,7 @@ $\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.
 \end{enumerate}
 \end{theorem}
 \begin{remark}
-在后面定理\ref{t:subshift}[(i)]证明主要就是用到了上面定理中(i)和(iii)的等价.
+在后面定理\ref{t:subshift}[(i)]的证明主要就是用到了上面定理中(i)和(iii)的等价.
 \end{remark}
 
 
@@ -241,7 +245,7 @@ $\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{不变测度}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-对于任何一个紧致的度量空间$X$，它本身并没有测度的结构。但是我们是否可以构造出一个测度$\mu$并且期望它是不变测度.如果我们能够做到这一个点,就可以把遍历性推广到任意一个紧致度量空间上,继而运用于拓扑动力系统中.本节的主要定理就是证明这样的测度是存在的.
+对于任何一个动力系统$(X,T)$，它本身并没有测度的结构。但是我们是否可以构造出一个测度$\mu$并且期望它是不变测度.如果我们能够做到这一个点,就可以把遍历性推广到任意一个动力系统上,继而运用于拓扑动力系统中.本节的主要定理就是证明这样的测度是存在的.
 
 对于一个紧致的度量空间,有一个自然的Borel代数$\B (X)$,即有全部开集生成的$\sigma$代数.用$\mathcal{M}(X)$记$\mathcal{B}(X)$上的所有概率测度的集合.记$C(X)$为$X$到$\mathbb{C}$上的全体连续函数,度量取一致度量,即$\|f\|=\sup\{\|f(x)\|:x\in X\}$.
 
@@ -258,7 +262,7 @@ $\mathcal{M}(X)$是动力系统$(X,T)$上的一个概率测度的全体.那么$u
 为此我们需要下面的定理:
 \begin{theorem}[Riesz's Representation Theorem]
 
-设$X$是紧致的度量空间.$I:C(X)\rightarrow \mathbb{C}$为线性的正算子,且$I(1)=1$,那么存在$u\in \mathcal{M}(X)$使得$$\int \!f\,\mathrm{d}u=I(f)$$.
+设$X$是紧致的度量空间.$I:C(X)\rightarrow \mathbb{C}$为线性的正算子,且$I(1)=1$,那么存在$u\in \mathcal{M}(X)$使得$$\int \!f\,\mathrm{d}u=I(f).$$
 
 \end{theorem}
 
@@ -292,9 +296,10 @@ $$
 对任意动力系统$(X,T)$,存在不变测度$\mu\in\mathcal{M}(X)$.
 \end{theorem}
 \begin{proof}
-对任意$x_0\in X$,令$\delta_{x_0}(B)=1$,如果$x_0\in B$;$\delta_{x_0}(B)=0$,如果$x\notin B$.
+对任意$x_0\in X$,令$\delta_{x_0}(B)=1$,如果$x_0\in B$;$\delta_{x_0}(B)=0$,如果$x\notin B$.这里有$\delta_{x_0}(\cdot)\in\mathcal{M}(X)$.
+
 令$$\mu_n=\frac{1}{n}\sum_{i=0}^{n-1}\delta_{T^ix_0}.$$
-设$\mu$为$\{\mu_n\}$在$\mathcal{M}(X)$中的极限点,即$\mu_{n_k}\rightarrow \mu$.
+因为$\mathcal{M}(X)$是紧致的,故可设$\mu$为$\{\mu_n\}$在$\mathcal{M}(X)$中的极限点,即存在序列$\{\mu_{n_k}:k\in\mathbb{N}\}$使得$\mu_{n_k}\rightarrow \mu$.又
 \begin{align*}
 \|\int f \mathrm{d}\mu -\int U_Tf\mathrm{d}\mu\|&=\|\lim_{k\to\infty}\int f \mathrm{d}\mu_{n_k} -\int U_Tf\mathrm{d}\mu_{n_k}\|\\
 &=\lim_{k\to\infty}\|\frac{1}{n_k}\int\sum_{i=0}^{n_k-1}(f(T^kx)-f(T^{k+1}x)\mathrm{d}\delta_{x_0}\|\\
