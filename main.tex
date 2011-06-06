@@ -1,0 +1,734 @@
+\documentclass[a4paper,11pt,oneside]{book}
+\usepackage{indentfirst,fancyhdr,graphicx}
+\usepackage[BoldFont]{xeCJK}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+%%%%%%Fonts
+\setCJKmainfont[BoldFont={Adobe Heiti Std}, ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\setCJKfamilyfont{Microsoft YaHei}{Microsoft YaHei}
+\setCJKfamilyfont{Adobe Song Std}{Adobe Song Std}
+\setCJKfamilyfont{Adobe Heiti Std}{Adobe Heiti Std}
+\setCJKfamilyfont{Adobe Kaiti Std}{Adobe Kaiti Std}
+\setCJKfamilyfont{Adobe Fangsong Std}{Adobe Fangsong Std}
+\setmainfont{Times New Roman}
+\setsansfont[BoldFont={Courier New Bold}]{Courier New}
+\setmonofont[BoldFont={Arial:style=Bold}]{Arial}
+
+
+%Chinese font size
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosanhao}{\fontsize{15pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
+
+
+
+\newtheorem{theorem}{\textbf{\hspace{0.7cm}定理}}[section]
+\newtheorem{lemma}{\textbf{\hspace{0.7cm}引理}}[section]
+\newtheorem{example}{\textbf{\hspace{0.7cm}例}}[section]
+\newtheorem{algorithm}{\textbf{\hspace{0.7cm}算法}}[section]
+\newtheorem{definition}{\textbf{\hspace{0.7cm}定义}}[section]
+\newtheorem{axiom}{\textbf{\hspace{0.7cm}公理}}[section]
+\newtheorem{property}{\textbf{\hspace{0.7cm}性质}}[section]
+\newtheorem{proposition}{\textbf{\hspace{0.7cm}命题}}[section]
+\newtheorem{corollary}{\textbf{\hspace{0.7cm}推论}}[theorem]
+\newtheorem{remark}{\textbf{\hspace{0.7cm}注解}}[section]
+\newtheorem{condition}{\textbf{\hspace{0.7cm}条件}}[section]
+\newtheorem{conclusion}{\textbf{\hspace{0.7cm}结论}}[section]
+\newtheorem{assumption}{\textbf{\hspace{0.7cm}假设}}[section]
+\newtheorem*{prove}{\textbf{\hspace{0.7cm}证明}}
+\renewcommand\proofname{证明}
+
+
+\newcommand{\ms}[1]{\mathscr{#1}}
+\newcommand{\B}{\mathcal{B}}
+
+
+
+\begin{document}
+
+\newpage
+  \thispagestyle{empty}
+  \null
+  \begin{center}%
+  \let \footnote \thanks
+    {\sihao {中国科学技术大学}\\
+    \sihao \textrm{University of Science and Technology of China}\\
+     \sihao {本科毕业论文}\\ \sihao\textrm{A Dissertation Submitted for the Bachelor's Degree} \par}%
+    \vskip 1.5cm
+    \sihao{唯一遍历与一致次可加遍历定理}
+    \\
+    \sihao{Unique Ergodicity and Uniform Subadditive Ergodic Theorem}
+    {\large
+      \lineskip .5em%
+      \\
+      \vskip2.5cm
+      {
+      \renewcommand\arraystretch{1.2}
+       \begin{tabular}[t]{cc}%
+        姓$\quad$名&\underline{\makebox[6cm][c]{赵\ 鑫}}\\
+        B.S. Candidate&\underline{\makebox[6cm][c]{Xin Zhao}}\\
+        导$\quad$师&\underline{\makebox[6cm][c]{黄文\ 教授}}\\
+        Supervisor&\underline{\makebox[6cm][c]{Prof.Wen Huang}}\\
+      \end{tabular}}\par}%
+    \vskip3em
+  {\Large 2011年6月}\\
+  {\Large June, 2011}
+  \end{center}
+  \newpage\thispagestyle{empty}\renewcommand\arraystretch{1.0}
+  
+  
+\fancyhf{}
+\fancyhead[CO]{\CJKfamily{Adobe Song Std}\fontsize{9pt}{\baselineskip}\selectfont 中国科学技术大学本科毕业论文}
+\fancyhead[LO]{}
+\fancyhead[C]{\CJKfamily{Adobe Song Std}\fontsize{9pt}{\baselineskip}\selectfont 中国科学技术大学本科毕业论文}
+\fancyhead[L]{}
+\fancyfoot[CO,C]{\thepage}
+
+\pagestyle{fancy}
+
+\thispagestyle{fancy}
+
+\begin{center}
+{{\bf \LARGE 致\ 谢\\}}
+\end{center}
+\vspace{2.5cm}
+ 衷心感谢黄文教授.本文是在他的悉心指导下完成的.\\
+ 谢谢四年来我所有的任课老师.是他们给了我真正的数学启蒙,使我得以窥见数学的美妙.
+\begin{center}
+\vspace{5cm}\hspace{9cm}2011年6月
+\end{center}
+
+
+        
+\newpage
+
+\renewcommand{\contentsname}{\centerline{目$\quad$录}}
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\tableofcontents
+\pagestyle{fancy}
+\thispagestyle{fancy}
+\setcounter{page}{1}
+
+\chapter*{\centerline{内容摘要}}
+\thispagestyle{fancy}
+本文主要研究了符号系统上的一致可加和次可加遍历定理.本文首先介绍了一般动力系统上的不变测度和唯一遍历性.给出了符号系统上极小性和唯一遍历的刻画.本文最后证明了极小系统上一致可加和次可加遍历定理的充要条件.
+
+\medskip
+{\bf 关键字}:\emph{极小性,唯一遍历性,子转移,一致次可加遍历定理.}
+
+\chapter*{\centerline{Abstract}}
+\thispagestyle{fancy}
+This article is fucused on the uniform additive and subadditive ergodic theorem on the a subshift over a finite alphabet. First we introduce the  preserving measure and unique ergodicity on general dynamic system. Then we give the description of minimal and uniquely ergodic subshift. Last we prove the uniform additive and subadditive ergodic theorem on symbol system.
+{\bf Keywords}:\emph{minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem,}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{不变测度与唯一遍历}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}
+在这章中我们主要介绍了一个动力系统不变测度的存在性，以及唯一遍历系统及其一致收敛的等价刻画。
+在本文中一个{\bf\it 动力系统}$(X,T)$是指$X$是一个紧致度量空间, $T:X\rightarrow T$是一个连续自映射。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{保测变换}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}
+设$(X_1,\ms{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间.
+\begin{enumerate}[(i)]
+\item 变换$T:X_1 \rightarrow X_2$称为可测变换,如果$T^{-1}(\mathscr{B}_2) \subseteq \mathscr{B}_1$.(即\
+$B_2 \in \mathscr{B}_2\Rightarrow T^{-1}(B_2) \in \mathscr{B}_1$)
+\item 变换$T:X_1 \rightarrow X_2$是保测变换,如果$T$是可测的,且
+$$m_1(T^{-1}(B_2))=m_2(B_2), \forall B_2 \in \mathscr{B}_2$$
+\item 特别地,我们把概率空间
+\end{enumerate}
+\end{definition}
+
+
+
+$(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间，$T:X_1 \rightarrow X_2$是保测变换，那么$T$就诱导了一个从$L^p(X_2,\mathscr{B}_2,m_2)$到$L^p(X_1,\mathscr{B}_1,m_1)$的映射。记$L^{\circ}(X,\ms{B},m)$是$(X,\ms{B},m)$上的可测函数空间。
+
+\begin{definition}
+$(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间，$T:X_1 \rightarrow X_2$是保测的。$T$诱导的算子$$U_T:L^{\circ}(X_2,\ms{B}_2,m_2)\rightarrow L^{\circ}(X_1,\ms{B}_1,m_1))$$定义作$$(U_Tf)(x)=f(Tx),f\in L^{\circ}(X_2,\ms{B}_2,m_2),x\in X_1$$。
+
+\end{definition}
+\begin{remark}
+研究$U_T$的理论称为$T$的谱理论，他在遍历性和混合性概念中有着重要作用。
+\end{remark}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{遍历性}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+引入遍历的概念是为了在同构意义下分类$T:X \rightarrow X$。试想如果某个$B\in\ms{B}$使得$T^{-1}(B)=B$，那么$T$在某种意义下就是可以看成$T|_B$和$T|_{B^{c}}$的组合。以此下去，这样我们就可以把把$T$分解成若干个不可约的变换的组合。如果$T$在这种意义下是不可约的，那么满足上面条件的$B$一定是$m(B)=0$或$m(B)=1$,这种不可约的性质被称作遍历。更准确的，我们定义遍历：
+
+\begin{definition}
+设$(X,\ms{B},m)$是一个概率空间。$T:X \rightarrow X$是$X$到自身的一个变换。$T$是遍历的，如果$B\in\ms B $满足$T^{-1}(B)=B$,那么$m(B)=0$或者$m(B)=1$。
+\end{definition}
+
+遍历有几个等价的条件，如下。
+\begin{theorem}
+$T:X \rightarrow X$是概率空间$(X,\ms{B},m)$上自身到自身的保测变换。一下条件是等价的：
+\begin{enumerate}[(i)]
+\item $T$是遍历的。
+\item 如果$B\in\ms B$满足$m(B\bigtriangleup T^{-1}(B))=0$,那么$m(B)=0$或者$m(B)=1$。
+\item 对任意的$B\in\ms B$,$m(B)>0$,那么$m(\bigcup_{n=1}^{\infty}T^{-n}A)=1$。
+\item 对每个$A,B\in\ms B$,$m(A)>0$，$m(B)>0$，那么存在$n>0$使得$m(T^{-n}A\cap B)>0$。
+\end{enumerate}
+\end{theorem}
+
+关于遍历更多的细节,定理和性质还有证明,可以参看\cite{pw}.
+
+为Birkhoff遍历定理,我们引入条件期望的概念.
+\begin{definition}
+$(X,\ms{B},m)$为一个概率测度,$\ms C$为一个$\ms B$的子$\sigma$代数.
+定义条件期望$$\mathbb{E}(\cdot|\ms{C}):L^1(X,\ms{B},m)\rightarrow L^1(X,\ms{C},m)$$.如果$f\equiv 0$,那么定义$\mathbb{E}(f|\ms{C})=0$;如果$f$非负且%
+$a=\int_X f \mathrm d m>0$,那么$\mu_f(C)=a^{-1}\int_C f\mathrm d m$.
+由Radon-Nikodym定理,存在函数$\mathbb{E}(f|\ms{C})\in L^1(X,\ms B,m)$使得%
+$\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.这个$\mathbb{E}(f|\ms{C})$在a.e.的意义下是唯一的.对任意复函数只需对实虚正负部分别这样做.这样就对任意$f\in L^1(X,\ms b,m)$得到了a.e唯一的$\mathbb{E}(f|\ms{C})$满足$$\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$$
+\end{definition}
+
+\begin{theorem}[Birkhorff's Ergodic Theorem]
+设$(X,\ms B,\mu,T)$为一个保测系统.$f\in L^1(\mu)$,令$$S_n(f)(x)=\sum_{k=0}^{n-1}f(T^kx)$$那么$$\frac{1}{n}S_n(f)\rightarrow f^*=\mathbb{E}(f|\ms B_T)$$
+其中$\ms B_T=\{B\in \ms B:T^{-1}B=B\}$.特别,当$T$遍历时,$f^*=\int f \mathrm d m$
+\end{theorem}
+\begin{proof}
+证明参见\cite{hy} p35-36.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{极小性}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}
+动力系统$(X,T)$称为极小的，如果他不真包含任何闭不变子空间。如果$(Y,T)$是极小的子系统，就称为$X$的极小集。极小集忠的点称为极小点。
+\end{definition}
+以下是动力系统中熟知的极小性等价定理。
+\begin{theorem}
+\label{t:minimal}
+对于动力系统$(X,T)$，以下命题等价：
+\begin{enumerate}[(i)]
+\item $(X,T)$为极小的；
+\item 对任何$x\in X$，$\overline{orb(x,T)}=X$；
+\item 对任何非空开集$U$，存在有限子集$A\subset \mathbb{N}$，使得$$\bigcup_{n\in A}T^{-n}U=X$$
+\end{enumerate}
+\end{theorem}
+\begin{remark}
+在后面定理\ref{t:subshift}[(i)]证明主要就是用到了上面定理中(i)和(iii)的等价.
+\end{remark}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{不变测度}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+对于任何一个紧致的度量空间$X$，它本身并没有测度的结构。但是我们是否可以构造出一个测度$\mu$并且期望它是不变测度.如果我们能够做到这一个点,就可以把遍历性推广到任意一个紧致度量空间上,继而运用于拓扑动力系统中.本节的主要定理就是证明这样的测度是存在的.
+
+对于一个紧致的度量空间,有一个自然的Borel代数$\B (X)$,即有全部开集生成的$\sigma$代数.用$\mathcal{M}(X)$记$\mathcal{B}(X)$上的所有概率测度的集合.记$C(X)$为$X$到$\mathbb{C}$上的全体连续函数,度量取一致度量,即$\|f\|=\sup\{\|f(x)\|:x\in X\}$.
+
+下面的引理在测度论中是平凡的.
+\begin{lemma}
+\label{l}
+$\mathcal{M}(X)$是动力系统$(X,T)$上的一个概率测度的全体.那么$u=v\in \mathcal{M}(X)$当且仅当$\int\!f \, \mathrm{d}u=\int f\, \mathrm{d}v,\forall f\in C(X)$.
+概率测度$u$是不变的当且仅当$\int\!f \, \mathrm{d}u=\int\! U_Tf\, \mathrm{d}v,\forall f\in C(X)$
+\end{lemma}
+
+对$\mathcal{M}(X)$我们可以给与弱$^*$拓扑,即$\mu_n\rightarrow \mu$当且仅当$\int\!f \, \mathrm{d}\mu_n\rightarrow \int\!f \, \mathrm{d}\mu,\forall f \in C(X)$.
+在这个拓扑下,我们可以证明$\mathcal{M}(X)$是紧致的度量空间.
+
+为此我们需要下面的定理:
+\begin{theorem}[Riesz's Representation Theorem]
+
+设$X$是紧致的度量空间.$I:C(X)\rightarrow \mathbb{C}$为线性的正算子,且$I(1)=1$,那么存在$u\in \mathcal{M}(X)$使得$$\int \!f\,\mathrm{d}u=I(f)$$.
+
+\end{theorem}
+
+由以上的引理和定理,我们得到了$\mu\in \mathcal{M}(X)$到$C(X)$上规范正线性算子的双射.
+
+下面证明:
+\begin{theorem}
+$\mathcal{M}(X)$是紧致的.
+\end{theorem}
+
+\begin{proof}
+在紧致集上的连续函数全体$C(X)$是可分的,即存在可数的稠密连续函数子集$\{f_n\}_{n=0}^{\infty}$.有因为一个度量空间是可分的,当且仅当他的单位球是可分的,故不妨假设$\|f_n\|=1,\forall n\in \mathbb{N}$.
+对$\mathcal{M}(X)$中的序列$\{\mu_n\}_{n=0}^{\infty}$,我们需要找到一个收敛的子列$\{\mu_{j_k}\}_{k=0}^{\infty}$,在我们赋予$\mathcal{M}(X)$的弱$^*$拓扑中,这实际就是需要证明$\exists \mu\in \mathcal{M}(X)$满足%
+$$\int\! f_n \,\mathrm{d}\mu_{j_k}\rightarrow \int\! f_n \,\mathrm{d}\mu,as\,\, k\rightarrow +\infty,\forall n\in\mathbb{N}.$$
+
+故对$f_1$,$\int\! f_1 \,\mathrm{d}\mu_j$在$\mathbb{C}$中是有界的.故存在子列$\mu_{j_k^{(1)}}$使得$\int\! f_1 \,\mathrm{d}\mu_{j_k^{(1)}}$收敛于$I(f_1)$.
+对$f_2$,$\int\! f_2 \,\mathrm{d}\mu_{j_k^{(1)}}$在$\mathbb{C}$中是有界的.故存在子列$\mu_{j_k^{(2)}}$使得$\int\! f_1 \,\mathrm{d}\mu_{j_k^{(2)}}$收敛于$I(f_2)$.
+递归地做下去,即$f_n$,$\int\! f_n \,\mathrm{d}\mu_{j_k^{(n-1)}}$在$\mathbb{C}$中是有界的.故存在子列$\mu_{j_k^{(n)}}$使得$\int\! f_1 \,\mathrm{d}\mu_{j_k^{(n)}}$收敛于$I(f_n)$.抽取其中的对角线,即$\mu_{j_n^{(n)}}$.由构造过程可知,%
+$$\int\! f_n \,\mathrm{d}\mu_{j_k^{(k)}}\rightarrow I(f_n)\in\mathbb{C},as\,\, k\rightarrow +\infty,\forall n\in\mathbb{N}.$$
+由于$\{f_n\}_{n=0}^{\infty}$是稠密的,故$I$可以扩充到$C(X)$中,且这是定义好的,这是因为$$\|I(f-g)\|=\|\lim_{k\to +\infty}\int\! f-g \,\mathrm{d}\mu_{j_k^{(k)}}\|\leq \lim_{k\to +\infty}\int\! \|f-g\| \,\mathrm{d}\mu_{j_k^{(k)}}\leq\|f-g\|$$
+
+由此可见,
+$$
+I:C(X)\rightarrow \mathbb{C}\\
+$$
+是线性的正算子,故存在$\mu\in \mathcal{M}(X)$使得$I(f)=\int f \mathrm{d}\mu$.
+即得$$\int\! f_n \,\mathrm{d}\mu_{j_k}\rightarrow \int\! f_n \,\mathrm{d}\mu,as\,\, k\rightarrow +\infty,\forall n\in\mathbb{N}.$$
+\end{proof}
+
+\begin{theorem}[Krylov-Bogolioubov's Theorem]
+对任意动力系统$(X,T)$,存在不变测度$\mu\in\mathcal{M}(X)$.
+\end{theorem}
+\begin{proof}
+对任意$x_0\in X$,令$\delta_{x_0}(B)=1$,如果$x_0\in B$;$\delta_{x_0}(B)=0$,如果$x\notin B$.
+令$$\mu_n=\frac{1}{n}\sum_{i=0}^{n-1}\delta_{T^ix_0}.$$
+设$\mu$为$\{\mu_n\}$在$\mathcal{M}(X)$中的极限点,即$\mu_{n_k}\rightarrow \mu$.
+\begin{align*}
+\|\int f \mathrm{d}\mu -\int U_Tf\mathrm{d}\mu\|&=\|\lim_{k\to\infty}\int f \mathrm{d}\mu_{n_k} -\int U_Tf\mathrm{d}\mu_{n_k}\|\\
+&=\lim_{k\to\infty}\|\frac{1}{n_k}\int\sum_{i=0}^{n_k-1}(f(T^kx)-f(T^{k+1}x)\mathrm{d}\delta_{x_0}\|\\
+&=\lim_{k\to\infty}\|\frac{1}{n_k}\int\sum_{i=0}^{n_k-1}(f(T^kx)-f(T^{k+1}x))\mathrm{d}\delta_{x_0} \|\\
+&=\lim_{k\to\infty}\|\frac{1}{n_k}\int(f(x)-f(T^{k+1}x))\mathrm{d}\delta_{x_0} \|\\
+&\leq \lim_{k\to\infty}{2\|f\|\over n_k}\\
+&=0
+\end{align*}
+由$f$的任意性及引理\ref{l},即知$\mu$为不变测度.
+\end{proof}
+
+这样我们就证明了,对任何一个动力系统$(X,T)$,我们总可以找到一个测度,使得$T$称为保测变换.
+下面我们要做的是给满足满足遍历性质或者极小性质的不变测度一个刻画.
+
+记$\mathcal{W}(X,T)\subset\mathcal{M}(X)$为全体$T$不变$Borel$概率测度,$\mathcal{M}^e(X,T)\subset\mathcal{M}(X,T)$为全体遍历测度.
+
+\begin{theorem}
+设$(X,T)$为动力系统,则
+\begin{enumerate}[(i)]
+\item $\mathcal{M}(X,T)$为$\mathcal{M}(X)$紧致子集;
+\item $\mathcal{M}^e(X,T)$为凸集;
+\item $\mu$为$\mathcal{M}^e(X,T)$的端点当且仅当$T$为$(X,\ms B(X),\mu)$为遍历测度.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(i)(ii)的证明是平凡的.
+(iii)的证明参见\cite{hy} p43.
+\end{proof}
+
+根据Birkhoff定理,如果一个$(X,T)$是遍历的,那么$S_n(f)(x)=\sum_{k=0}^{n-1}f(T^kx)\rightarrow \int f \mathrm d \mu$.我们给出generic点的定义:
+
+\begin{definition}
+在动力系统$(X,T)$及给定$\mu\in\mathcal{M}(X)$中,$x\in X$是generic点,如果$\forall f\in C(X)$,有
+$$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)\rightarrow \int f\mathrm d \mu$$
+\end{definition}
+
+以下两个定理都是大家熟知的,参看\cite{hy} p43-45
+
+
+\begin{proposition}
+$(X,T)$为动力系统且$\mu\in\mathcal{M}^e(X)$,则几乎所有点都是generic点(在a.e.意义下).
+\end{proposition}
+
+
+\begin{definition}
+对动力系统$(X,T)$,如果$\mathcal{M}^e(X)$中仅有一个元素,我们称这个系统是唯一遍历的.
+\end{definition}
+
+\begin{theorem}
+对动力系统$(X,T)$,则以下条件等价:
+\begin{enumerate}[(i)]
+\item $\forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$一致收敛到一个常值函数;
+\item $\forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$逐点收敛到一个常值函数;
+\item 存在$\mu\in\mathcal{M}(X,T)$,使得对任意$f\in C(XA)$及$x\in X,\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)\rightarrow \int f \mathrm d \mu$
+\item $T$是唯一遍历的.
+\end{enumerate}
+\end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{符号系统中的可加及次可加一致遍历定理}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}
+这章中首先引入了符号系统的概念.然后给出了在这个特殊的动力系统内,给出了符号系统特有的极小性和唯一遍历性的判别法.之后讨论了,符号系统中一致可加收敛定理和一致次可加收敛定理的充要条件.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{符号系统的概念和两个等价定理}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}
+带有离散拓扑的有限集$A$称为字母表。$A$中的元素称为字母。给$A^{\mathbb{Z}}$以离散拓扑。那么$A^{\mathbb{Z}}$是紧致的。若在给与$A^{\mathbb{Z}}$以度量$$\parallel\! x,y\!\parallel =\sum_{k=-\infty}^{+\infty}{\delta (x_k,y_k)\over 2^{|k|}}$$
+其中$x_k,y_k$分别是$x,y$的第$k$个分量，
+\begin{equation*}
+\delta(a,b)=
+\begin{cases}
+1 &\text{if }a\neq b,\\
+0 &\text{if }a=b.
+\end{cases}
+\end{equation*}
+
+则$A^{\mathbb{Z}}$是可度量的。定义
+\begin{align*}
+T:& A^{\mathbb{Z}}\rightarrow A^{\mathbb{Z}}\\
+  & Ta_k=a_{k+1}
+\end{align*}
+称$(A^{\mathbb{Z}},T)$为转移。若$B\subseteq A^{\mathbb{Z}}$在$T$下不变的闭空间，则$(B,T)$称为子转移。
+
+\end{definition}
+
+
+\begin{definition}
+\begin{enumerate}[(i)]
+\item 记$Sub(w)$为所有$w$的所有子词.空词记为$\epsilon$.
+\item 记$\mathcal{W}=\mathcal{W}(\Omega)$为所有$w\in \Omega$的有限子词全体.
+\item $\#M$为集合$M$中词的个数。$\#_vM$为$v$在$M$中出现的次数。$|\cdot|$表示一个词的长度,即含有字母的个数
+\item 如果对一个$u\in \mathcal{W}$,$w\in \mathcal{W}$满足%
+$$w u\in \mathcal{W},\#_u(w u)=2,$$
+且$u$是$wu$的前缀,即$wu$是以$u$开头的。那么$w$就称作$u$的一个回复词.这个定义是在\cite{d}中提出的.
+\item $u\in \mathcal{W}$的回复词集记为$\mathcal{R}(u)=\mathcal{R}(u,\mathcal{W})$。$\mathcal{R}^n=\bigcup_{v\in \mathcal{W},\|v|=n}\mathcal{R}(v)$。
+\item 令$m(n)=min\{|x\|:x\in \mathcal{R}^n\}$.
+\item 词$w\in \mathcal{W}$的柱$[w]$为$\{(\ldots,w_0,w_1,\ldots,w_n,\ldots)\}$,其中$n=|w\|$且$w$的第一个分量$w_0$出现在$A^{\mathcal{Z}}$第0个分量上.
+\end{enumerate}
+
+\end{definition}
+
+设$a,b$是词,记$ab$为连缀起来的词.$a^l$为$l$个$a$连缀起来形成的词.比如,$a=213,b=45$,则$ab=21345,a^2=213213$.
+
+如果系统$(\Omega,T)$是极小的,那么$u$的回复词长度一定都小于$R(u)$.
+
+对于转移这个特殊的动力系统,对极小性和唯一遍历都有特别的等价条件.
+
+\begin{theorem}
+\label{t:subshift}
+$(\Omega,T)$是一个子转移,那么
+\begin{enumerate}[(i)]
+\item 子转移$(\Omega,T)$是极小的，当且仅当对每个$w\in \mathcal{W}$存在$R(w)>0$使得对%
+每个$v\in \mathcal{W}$且$|v|\geq R(w)$,$w$都是$v$的一个因子。
+\item 子转移$(\Omega,T)$是唯一遍历的，当且仅当$$\lim_{|w| \to \infty}{\#_v(w)\over |w |}<\infty, \forall v\in \mathcal{W}$$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+在下面的证明中,我们取底空间为$A^{\mathbb{N}}$,这样证明比较简洁.而且易见,这样的证明同样适用于$A^{\mathbb{Z}}$
+\begin{enumerate}[(i)]
+\item $(\Rightarrow)$取词$w\in\mathcal{W}$的柱$[w]\subset \Omega$,那么由定理\ref{t:minimal}$\exists A\subset\mathbb{N}$为有限集使得$\bigcup_{n\in A} T^{-n}[w]=\Omega$.这就能够说明取$\mathcal{R}(w)=max\{x:x\in A\}$时,每个$v\in \mathcal{W}$且$|v|\geq R(w)$,$w$都是$v$的一个因子.
+
+$(\Leftarrow)$如果对每个$v\in \mathcal{W}$且$|v|\geq R(w)$,$w$都是$v$的一个因子,$n=|w|$.那么$\Omega\subset \bigcup_{k=0}^{\mathcal{R}(w)-n}[w]$,故由定理\ref{t:minimal},知$(\Omega,T)$是极小的.
+\item $(\Rightarrow)$令$\delta_v(w)=1$如果$v$是$w$的前缀.否则$\delta_v(w)=0$.则$\delta$是$\Omega$上的连续函数.因为$f^{-1}\{1\}=[v],f^{-1}\{0\}=[A^{n}-v]$,其中$n=|v|$,$[A^{n}-v]$表示所有除了$v$以外长为$n$的词生成的柱的并集,显然$[v]$和$[A^{n}-v]$都是$\Omega$中开集.
+
+那么我们有以下的式子成立$$\#_v(w)=\sum_{k=0}^{n-1}\delta_v(T^kw)+j,0\leq j\leq |v|$$
+$j$虽然依赖$v,w$,但是它是被一个常数完全控制的.
+
+直接计算,并由唯一遍历的等价定理知,
+$$
+\lim_{|w| \to \infty}{\#_v(w)\over |w |}=\lim_{n\to +\infty}\frac{1}{n}\{\sum_{k=0}^{n-1}\delta_v(T^kw)-j\}=\lim_{n\to +\infty}\frac{1}{n}\sum_{k=0}^{n-1}\delta_v(T^kw)<+\infty
+$$
+$(\Leftarrow)$紧致度量空间上的连续函数一致连续.故对任意$\epsilon$,可以取充分大的$N$,使得对任意$w\in A^{N}$,如果$u,v\in [w],w\in A^{N}$那么$|f(u)-f(v)|<\epsilon$,下面的证明思路就是在"忽略$\epsilon$"的情况下,$f$可以视作取有限离散值,且是$\delta_v$函数的线性组合,每个分量的极限都存在,故而最终的极限存在,最后由唯一遍历的等价条件得出结论.
+若$v\in A^N$,可以任取$v^*\in [v]$.
+
+首先我们有以下式子成立:
+$$|f(w)-f(v^*)|<\epsilon,\forall w\in [v]$$
+这就是说$$|f(w)-\sum_{v\in A^N}f(v^*)\delta_v(w)|<\epsilon$$
+
+最后我们计算:
+\begin{align*}
+&|\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}f(T^kw)
+-\sum_{v\in A^{N}}f(v^*)\lim_{|w| \to \infty}{\#_v(w)\over |w |}|\\
+=&|\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}f(T^kw)
+-\sum_{v\in A^{N}}f(v^*)\lim_{n\to +\infty}\frac{1}{n}\{\sum_{k=0}^{n-1}\delta_v(T^kw)-j_v\}|\\
+\leq&\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}|f(T^kw)-\sum_{v\in A^N}f(v^*)\delta_v(T^kw)|+\lim_{n\to \infty}\frac{1}{n}\sum_{v\in A^N}|f(v^*)j_v|\\
+\leq&\epsilon
+\end{align*}
+由$\epsilon$的任意性,以及题设,知$\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}f(T^kw)$存在,故由唯一遍历的等价条件知,$(\Omega,T)$是唯一遍历的.
+
+\end{enumerate}
+\end{proof}
+
+
+\begin{definition}
+极小的子转移$(\Omega,T)$是非周期的,如果每个元素都不是周期的.
+\end{definition}
+\begin{lemma}
+设$w\in A^{\mathbb{Z}}$,如果存在$r$满足
+$$\#\{v\in Sub(w):|v|=r\}\leq r$$
+那么$w$一定是周期的.
+\end{lemma}
+\begin{proof}
+首先我们的证明可以化简到$A=\{0,1\}$的简单情况.这是以为如果命题对任意的$A$都正确,对这种特殊情况当然也正确.又注意到我们可以把$w$分成$\#A$个部分,对$a\in A$我们可以取$w_a$的第$k$个分量为1,如果$w$的第$k$个分量为$a$.这样就有
+$$w=\sum_{a\in A} a\cdot w_a$$
+命题成立当且仅当对$w_a$成立.
+
+
+我们用$u_k$记起时于$k$分量,长为$r$的子词.
+
+由鸽笼原理,$u_{i},1\leq i\leq r+1$共$r+1$个词,则一定至少有两个词相等.不妨设$u_{r+1}$等于某个$u_k,k\leq n$,这里取最小的那个$k$.这是可以推知,$u_{r+1}$就是$w_k\ldots w_r$的不断重复组成的.设这个循环节的长度为$c$.从$k$向前推,取最小的$j$使得这个循环从$j$开始仍然成立.因为$w$非周期,所以存在一个词使得$j\ne 1$.我们仍记为$u_1$.那么我们由$k$的极小性知道$k-j< c$.$u_j,\ldots ,u_{j+c}$是$c$个不同的循环词.由$j$的极小性知道$u_{j+1-r},\ldots ,u_{j-1}$是互不相同的词,且不是循环词,故与$u_j,\ldots ,u_{j+c}$都不相同.这样我们得到了共$j-1-(j+1-r)+1+c=r+c-1$个不同词.如果$c=1$,那么我们得到$u_{j-r},\ldots,u_j$共$r+1$个不同的词(这在$A=\{0,1\}$非常容易看出,因为若$w_{j-1}=0$,则$w_j=w_{j+1}=\ldots=w_{2r}=1$,这些词显然是不同的),与题设矛盾.若$c>2$,自然与题设矛盾.
+\end{proof}
+\begin{lemma}
+\label{l:1}
+设$(\Omega,T)$是极小的子转移。那么下面的条件等价：
+\begin{enumerate}
+\item $(\Omega,T)$是非周期的；
+\item $m(n)\rightarrow \infty,n\rightarrow \infty$。
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+$(ii)(\Rightarrow)(i)$因为如果是不是非周期的,那么至少存在一个元素$w$是周期的.设这个周期长度是$N$,则对任意的$w$的长度为$n$的有限子词$v_n$,一定存在一个长度小于$N$的回复词.这与$m(n)\rightarrow \infty,n\rightarrow \infty$矛盾.
+
+$(i)(\Rightarrow)(ii)$反证法.如果不然则存在$r>0$和${v_k}{u_k}$,使得
+$$|u_k|\leq r,\forall k\in\mathbb{N};|v_k|\rightarrow \infty ,k\rightarrow \infty;u_k\in\mathcal{R}(v_k)$$
+$u_k$是$v_k$的回复词.故而又有$v_k$是以$u_k^{l(k)}$开头的,其中$l(k)=\left[{|v_k|\over |u_k|}\right]$,其中$[x]$表示不大于$x$的最大整数.由假设,知
+\begin{equation*}
+l(k)\rightarrow \infty,k\rightarrow \infty
+\end{equation*}
+但是$(\Omega,T)$是极小的,故存在$L>0$使得任何长度为$r$的词都是长度为$L$的词因子.这是因为我们可以选取$L=\max\{R(v),|v|=r\}$.因此,对充分大的k,词$u_k^{l(K)}$包含任意长度为$r$的词.这就是说:
+$$\#\{v\in\mathcal{W}:|v|=r\}\leq\#\{v\in Sub(u_k^{l(K)})\}\leq |u_k|\leq r.$$
+这与$\Omega$的非周期性矛盾.
+
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{可加一致收敛定理}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}
+$(B,\|\cdot\|)$是Banach空间.一个函数$F:\mathcal{W}\rightarrow B$是可加的
+如果存在常数$D>0$和一个非增的函数$c:[0,\infty)\rightarrow [0,\infty)$且$\lim_{r\to\infty}c(r)=0$使得有以下两个不等式成立:
+\begin{enumerate}[(i)]
+\item $\|F(v)-\sum_{j=1}^nF(v_j)\|\leq\sum_{j=1}^n c(|v_j|)|v_j|$其中$v=v_1\ldots v_n\in\mathcal{W}$
+\item $\|F(v)\|\leq D|v|$对每个$v\in\mathcal{W}$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+在极小系统$(\Omega,T)$中,$u,v\in\mathcal{W}$给定.我们可以将$x$相对于$u$唯一分解为$x=au_1\ldots u_lb$满足:
+$$au_1\ne\emptyset,\#_u(x)=l,u\, pre\!fix\, o\!f\, u_j\ldots u_lb,j=1,\ldots,l$$
+这种分解称为$x$的$u$-partition.
+\end{definition}
+
+注意到系统是极小的,那么$|a|,|b|\leq R(u)$.$u_1,\ldots,u_{l-1}$是$u$的回复词,$u_l=u$.相似地,$w\in\Omega$可以分解为$w=\ldots u_{-2}u_{-1}u_0u_1u_2\ldots$使得:
+\begin{enumerate}[(i)]
+\item $w(0)$在$u_0$中.
+\item $u$在$w$中的出现都是以$u_j$开头的,$j\in \mathbb{Z}$
+\end{enumerate}
+
+\begin{definition}
+对一个$u$回复词$z$和$w\in\mathcal{W}$,$x=au_1\ldots u_lb$.$z$在$w$中出现的拓扑数
+$$p_{z,u}(w)=\#\{j\in\{1,\ldots,l\}:u_j=z\}$$
+\end{definition}
+
+\begin{proposition}
+$p_{z,u}(w)=\#_{zu}(w)$
+\end{proposition}
+
+\begin{definition}
+一个$\mathcal{W}$的序列${w_n}$称作partitioning序列,如果$|x_n|<|x_{n+1}|$
+\end{definition}
+\begin{theorem}
+$(\Omega,T)$是极小的子转移。那么下列条件是等价的：
+\begin{enumerate}[(i)]
+\item $(\Omega,T)$是唯一遍历的；
+\item 极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在，对每个取值于Banach空间的可加函数。
+\item 极限$\lim_{|w|\to \infty}\frac{1}{n}\sum_{j=1}^n{f(T^jw)}$存在且对$w\in \Omega$一致收敛，其中$f$是取值于Banach空间的连续函数。
+\end{enumerate}
+\end{theorem}
+
+下面的引理是证明上面的主要定理关键.
+
+\begin{lemma}
+\label{l:2}
+设$(\Omega,T)$是严格遍历的且$F:\mathcal{W}\rightarrow B$是可加的.那么极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在.
+\end{lemma}
+
+\begin{proof}
+先假设系统是非周期的.
+$(x_n)$是partitionin序列.因为系统是极小的,故对每个n,$x_n$只有有限的个回复词,记为$y_1^{(n)},\ldots,y_{l(n)}^{(n)}$.
+
+因为系统还是严格遍历的,故
+$$v_j^{(n)}\equiv \lim_{|w|\to \infty}{p_{y_j^{(n)},x_n}(w)\over |w|}|y_j^{(n)}|=\lim_{|w|\to \infty}{\#_{y_j^{(n)}x_n}(w)\over |w|}|y_j^{(n)}|$$
+由定理\ref{t:subshift}是存在的,对所有的j,n.
+
+令$$F^(n)\equiv \sum_{j=1}^{l(n)}v_n^{(n)}{F(y_j^{(n)})\over |y_j^{(n)}|}$$
+
+只需证明对任意小的$\epsilon>0$,存在$n$使得$|{F(w)\over |w|}-F^(n)|\leq \epsilon$,对充分长的$w$成立.由引理\ref{l:1},知存在$n\in\mathbb{N}$满足
+$$c(m(|x_n|))\leq {\epsilon\over 2}$$
+
+现在考虑$x_n$-partition $w=au_1\ldots u_sb$,我们计算:
+\begin{align*}
+&\left|{F(w)\over |w|}-F^(n)\right|\\
+=&\left|{F(w)\over |w|}-\sum_{j=1}^{l(n)}v_n^{(n)}{F(y_j^{(n)})\over |y_j^{(n)}|}\right|\\
+\leq & \left|{F(w)\over |w|}-{F(a)+\sum_{j=1}^sF(u_j)+F(b)\over |w|}\right|+\left|{F(a)+\sum_{j=1}^sF(u_j)+F(b)\over |w|}-\sum_{j=1}^{l(n)}v_j^{(n)}{F(y_j^{(n)})\over |y_j^{(n)}|}\right| \\
+\leq &{2c(0)R(x_n)\over |w|}+{2DR(x_n)\over |w|}+{\epsilon\over 2}+D\sum_{j=1}^{l(n)}\left|{p_{y_j^{(n)}}(w)|y_j^{(n)}|\over |w|}-v_j^{(n)}\right|
+\end{align*}
+由$\epsilon$的任意性,得到极限存在.
+
+下面假设系统是周期的.
+
+存在p,使得$T^pw=w$.令$v\in \mathcal{W}$的长度为p.对任意n,$w\in\mathcal{W}$满足$|w|\geq |v^n|$,则$w=av_1\ldots v_sb$,$v_j=v^n$.然后模仿上面的证明.
+\end{proof}
+
+\begin{lemma}
+\label{l:3}
+题设如上个引理.$f:\Omega\rightarrow B$是连续函数.那么$\frac{1}{n}\sum_{j=1}^nf(T^jw)$收敛于一个常数方程.
+\end{lemma}
+\newcommand{\w}{\omega}
+\begin{proof}
+对$\w\in\Omega$,定义函数$F_\w:\mathcal{W}\rightarrow B$如下:
+
+$$F_\w(w)\equiv \sum_{j=0}^{|w|-1}f(T^{k_\w^w+j\w})$$
+其中$k_\w^w\in \mathbb{N}$是使得$\w_{k_\w^w}\ldots\w_{k_\w^w+|w|-1}=w$的最小正整数.
+
+我们证明存在非增的函数$c:[0,\infty)\rightarrow[0,\infty)$且$\lim_{r\to \infty}c(r)=0$满足
+
+$$|F_\w(w)-F_\rho(w)|\leq c(|w|)|w|$$
+
+$f$是紧致空间上的连续函数,所以存在$k\in\mathcal{N}$使得只要$\w_{-k}\ldots\w_k=\rho_{-k}\ldots\rho_k$就有$$|f(\w)-f(\rho)|\leq {\epsilon\over 2}$$
+
+令$l\equiv \max\{{8k\|f\|_\infty \over \epsilon},2k\}$,其中$\|\cdot\|$为一致范数.对$w\in\mathcal{W}$满足$|w|\geq l$,我们计算:
+\begin{align*}
+&D\equiv|F_\w(w)-F_\rho(w)|\\
+=&\left|\sum_{j=0}^{|w|-1}(f(T^{k_\w^w+j}\w)-f(T^{k_\rho^w+j}\rho)\right|\\
+\leq &4\|f\|_\infty k+\sum_{j=k}^{|w|-k-1}|f(T^{k_\w^w+j}\w)-f(T^{k_\rho^w+j}\rho)|\\
+\leq & 4\|f\|_\infty k+(|w|-2k){\epsilon\over 2}\leq |w|\epsilon
+\end{align*}
+这就证明了$F_\w$是可加的,$\forall \w\in\Omega$和$$|F_\w(w)-F_\rho(w)|\leq c(|w|)|w|,\lim_{r\to \infty}c(r)=0$$
+\end{proof}
+
+\begin{proof}
+定理的证明:
+$(i)\Rightarrow(ii)$直接利用引理\ref{l:2}.$(ii)\Rightarrow(iii)$直接利用引理\ref{l:3}.注意到$\#_v$是可加的,即知$(iii)\Rightarrow (i)$.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{一致次可加遍历定理}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+研究次可加函数的动因是多方面的.
+
+
+首先,按照Birkhoff遍历定理中的记法,$S_n$满足可加性,即$S_{n+m}(f)=S_n(f)+S_m(f\circ T^n)$.如果改成小于号,即$S_{n+m}(f)\leq S_n(f)+S_m(f\circ T^n)$,对定理会有什么影响.
+
+
+其次,改为不等号确实在一些领域很重要.比如在具有范数有关的情况下.例如$(\Omega,T)$是一个动力系统,$SL(2,\mathbb{R})$赋予4维空间标准范数诱导的拓扑.$A:\Omega\rightarrow SL(2,\mathbb{R})$是同胚,我们可以定义一个二元函数仍记为$A$如下:
+\begin{align*}
+&A(\cdot,\cdot):\mathbb{Z}\times\Omega\rightarrow SL(2,\mathbb{R})\\
+&A(n,\omega)\equiv
+\begin{cases}
+A(T^{n-1}\omega)\ldots A(\omega)&n>0\\
+Id &n=0\\
+A^{-1}(T^n\omega)\ldots A^{-1}(T^{-1}\omega) &n<0
+\end{cases}
+\end{align*}
+这时我们有$\ln\|A(n+m,\omega)\|\leq \ln\|A(n,\omega)\|+\ln\|A(n,T^n\omega)\|$.
+
+如果我们希望研究这一类系统的行为,就需要研究次可加函数.我们只在符号系统内,给出一致次可加遍历定理的一个等价条件.
+\begin{definition}
+一个函数$f:\mathcal{W}\rightarrow \mathbb{R}$是次可加的,如果$f(ab)\leq f(a)+f(b)$.
+\end{definition}
+
+\begin{definition}
+以下是论文中要用的等价概念。
+\begin{description}
+\item[(SET)] 对任意次可加的函数$F$,极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在且等于$\inf_{n\in \mathbb{N}}F^{(n)}$，其中$F^{(n)}=\max\{{F(v)\over |v|}:v\in\mathcal{W},|v|=n\}$
+\item[(PQ)] 存在一个常数$C>0$满足$\nu(v)\geq C$对任意的$v\in \mathcal{W}$。其中
+$$l_v(w)=(maximal\, number\, o\!f\, disj\!oint\, copie\!s\, o\!f\, v\, in\, w)\cdot |v|$$
+$$\nu(v)=\liminf_{|w|\to \infty}{l_v(w)\over |w|}$$
+\end{description}
+\end{definition}
+\begin{theorem}
+$(\Omega,T)$是极小的子转移。那么下列条件是等价的：
+\begin{enumerate}[(i)]
+\item 子转移$(\Omega,T)$满足$(SET)$；
+\item 子转移$(\Omega,T)$满足$(PQ)$。
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+$(PQ)\Rightarrow(SET)$令$\overline{F}\equiv \inf_{n\in\mathbb{N}}F^{(n)}$.
+我们分开证明:
+\begin{equation}
+\label{A}
+\limsup_{|w|\to \infty}{F(w)\over |w|}\leq \overline{F}
+\end{equation}
+\begin{equation}
+\label{B}
+\liminf_{|w|\to \infty}{F(w)\over |w|}\geq \overline{F}
+\end{equation}
+\ref{A}的证明:只需证明$\limsup_{|w|\to \infty}{F(w)\over |w|}\leq F^{(n)}$.令$w=au_1\ldots u_l(w)$,其中$|u_k|=n,1\leq k\leq l(w)=[{|w|\over n}]$
+
+\begin{align*}
+\limsup_{|w|\to \infty}{F(w)\over |w|}\leq \limsup_{|w|\to \infty}{F(a)+\sum_{k=1}^{l(w)} F(u_k)\over |w|}=\limsup_{|w|\to \infty} \frac{1}{l(w)}\sum_{k=1}^{l(w)}{ F(u_k)\over |u_k|} \leq F^{(n)}
+\end{align*}
+
+\ref{B}的证明:假设不然.那么$\overline{F}>-\infty$且存在序列$(v_n)\in\mathcal{W},\delta>0$满足$${F(v_n)\over |v_n|}\leq \overline{F}-\delta,\forall n\in\mathbb{N}$$
+
+从\ref{A}我们知道,存在$L_0\in\mathbb{N}$使得
+
+$${F(w)\over |w|}\leq \overline{F}+{C\delta\over 8},\forall w\in\mathcal{W},|w|\geq L_0$$
+
+取定$m\in\mathbb{N}$使得$|v_m|\geq L_0$.由(PQ),存在$L_1\in\mathbb{N}$,$w\in\mathcal{W},|w|\geq L_1,w=x_1v_m\ldots v_mx_{l+1}$满足
+
+$${l-2\over 2}\geq {C\over 4}{|w|\over |v_m|}$$ 
+
+现在$w$考虑其他的写法.$w=y_1v_m\ldots v_my_{r+1},|y_j|\geq |v_m|\geq L_0$,
+我们有
+
+$$r\geq {l-2\over 2}\geq {C\over 4}{|w|\over |v_m|}$$
+
+下面我们计算:
+\begin{align*}
+&{F(w)\over|w|}\leq \sum_{j=1}^{r+1}{F(y_j)\over |y_j|}{|y_j|\over |w|}+{F(v_M)\over |v_m|}{r|v_m|\over|w|}\\
+\leq & \sum_{j=1}^{r+1}(\overline{F}+{C\over 8}\delta){|y_j|\over |w|}+(\overline{F}-\delta){r|v_M|\over |w|}\\
+\leq &\overline{F} + {C\over 8}\delta -{C\over 4}{|w|\over |v_m|}{|v_m|\over |w|}\delta\leq \overline{F} - {C\over 8}\delta
+\end{align*}
+
+这导致$F^{(L_1)}\leq \overline{F}-{C\over 8}\delta<\inf_{n\in\mathbb{N}}F^{(n)}$.矛盾.
+
+$(SET)\Rightarrow(PQ)$$(-l_v)$是次可加的,因此由(SET),知$$\nu(v)\equiv \liminf_{|w|\to\infty}{l_v(w)\over |w|}=\lim_{|w|\to\infty}{l_v(w)\over |w|}$$
+
+因为系统是极小的,那么$\nu(w)>0$.假设(PQ)不成立.即存在序列$(v_n)$使得
+$$\nu(v_n)>0,\nu(v_n)\rightarrow, n\rightarrow \infty.$$
+
+因为$A$是有限的,故可知,$$|v_n|\rightarrow \infty, n\rightarrow \infty$$
+
+取$(v_n)$一个子列,仍记为$(v_n)$使得$$\sum_{n=1}^{\infty}\nu(v_n)<{1\over 2}$$
+
+由以上的条件,我们可以对$k\in\mathbb{N}$选择一个正整数$n(k)$使得
+$$\sum_{k=1}^m {l_{v_{n(k)}}(w)\over |w|}<{1\over 2}$$
+对任意的$w\in \mathcal{W},|w|\geq {|v_n(k+1)|\over 2}$成立.
+这意味着:
+$$|v_{n(k)}|<{|v_{n(k+1)}|\over 2}$$
+定义方程:$l:\mathcal{W}\rightarrow \mathbb{R}$
+$$l(w)\equiv \sum_{j=1}^\infty l_{v_{n(j)}}(w)$$
+上式实际是个有限和,因为$v_{n(j)}\rightarrow\infty$.$l$还是次可加的.故由(SET),
+$$\lim_{|w|\to\infty}{l(w)\over |w|}$$
+存在.
+$${l(v_{n_k})\over |v_{n(k)}}|\geq 1$$.
+但是对${|v_{n(k+1)}|\over 2}\leq |w| \leq |v_{n(k+1)}$,有
+$${l(w)\over |w|}=\sum_{j=1}^k {l_{v_{n(j)}}\over |w|}<\frac{1}{2}$$
+这两个式子是矛盾的.
+\end{proof}
+
+
+\renewcommand\bibname{\centerline {参考文献}}
+%\bibliographystyle{plain}
+%\bibliography{ref}
+
+\begin{thebibliography}{10}
+\bibitem{d} F. Durand, A characterization of substitutive sequences using return words, Discrete Math.,179(1998),89-101
+\bibitem{l} D. Lenz, Unifrom ergodic theorems on subshitfs over a finite alphabet, Ergodic Theory Dynam. Systems, 22(2002), No.1, 245-255
+\bibitem{q} M. Queff\'elec, Substitution Dynamical Systems - Spectral Analysis, Lecture Notes in Math.,2184, Springer, Berlin, Heidleberg, New York, 1987
+\bibitem{hy} 叶向东,黄文,邵松, 拓扑动力系统概论, 科学出版社, 北京, 2008
+\bibitem{pw} P. Walters, An Introduction to Ergodic Theory, Graduate Texts in Math., 79, Springer, New York-Berlin, 1982
+
+
+
+
+\end{thebibliography}
+
+
+\end{document}
