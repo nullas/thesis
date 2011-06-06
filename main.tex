@@ -132,22 +132,22 @@
 本文主要研究了符号系统上的一致可加和次可加遍历定理.本文首先介绍了一般动力系统上的不变测度和唯一遍历性.给出了符号系统上极小性和唯一遍历的刻画.本文最后证明了极小系统上一致可加和次可加遍历定理的充要条件.
 
 \medskip
-{\bf 关键字}:\emph{极小性,唯一遍历性,子转移,一致次可加遍历定理.}
+{\bf 关键字}: \emph{极小性,唯一遍历性,子转移,一致次可加遍历定理.}
 
 \chapter*{\centerline{Abstract}}
 \thispagestyle{fancy}
 This article is fucused on the uniform additive and subadditive ergodic theorem on the a subshift over a finite alphabet. First we introduce the  preserving measure and unique ergodicity on general dynamic system. Then we give the description of minimal and uniquely ergodic subshift. Last we prove the uniform additive and subadditive ergodic theorem on symbol system.
 
 \medskip
-{\bf Keywords}:\emph{minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem}
+{\bf Keywords}: \emph{minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{不变测度与唯一遍历}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \thispagestyle{fancy}
-在这章中我们主要介绍了一个动力系统不变测度的存在性，以及唯一遍历系统及其一致收敛的等价刻画。
-在本文中一个{\bf\it 动力系统}$(X,T)$是指$X$是一个紧致度量空间, $T:X\rightarrow T$是一个连续自映射。
+在这章中我们主要介绍了一个动力系统不变测度的存在性,以及唯一遍历系统及其一致收敛的等价刻画.
+在本文中一个{\bf\it 动力系统}$(X,T)$是指$X$是一个紧致度量空间, $T:X\rightarrow T$是一个连续自映射.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{保测变换}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -164,14 +164,14 @@ $$m_1(T^{-1}(B_2))=m_2(B_2), \forall B_2 \in \mathscr{B}_2$$
 
 
 
-$(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间，$T:X_1 \rightarrow X_2$是保测变换，那么$T$就诱导了一个从$L^p(X_2,\mathscr{B}_2,m_2)$到$L^p(X_1,\mathscr{B}_1,m_1)$的映射。记$L^{\circ}(X,\ms{B},m)$是$(X,\ms{B},m)$上的可测函数空间。
+$(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间,$T:X_1 \rightarrow X_2$是保测变换,那么$T$就诱导了一个从$L^p(X_2,\mathscr{B}_2,m_2)$到$L^p(X_1,\mathscr{B}_1,m_1)$的映射.记$L^{\circ}(X,\ms{B},m)$是$(X,\ms{B},m)$上的可测函数空间.
 
 \begin{definition}
-$(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间，$T:X_1 \rightarrow X_2$是保测的。$T$诱导的算子$$U_T:L^{\circ}(X_2,\ms{B}_2,m_2)\rightarrow L^{\circ}(X_1,\ms{B}_1,m_1))$$定义作$$(U_Tf)(x)=f(Tx),f\in L^{\circ}(X_2,\ms{B}_2,m_2),x\in X_1$$。
+$(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间,$T:X_1 \rightarrow X_2$是保测的.$T$诱导的算子$$U_T:L^{\circ}(X_2,\ms{B}_2,m_2)\rightarrow L^{\circ}(X_1,\ms{B}_1,m_1))$$定义作$$(U_Tf)(x)=f(Tx),f\in L^{\circ}(X_2,\ms{B}_2,m_2),x\in X_1.$$
 
 \end{definition}
 \begin{remark}
-研究$U_T$的理论称为$T$的谱理论，他在遍历性和混合性概念中有着重要作用。
+研究$U_T$的理论称为$T$的谱理论,他在遍历性和混合性概念中有着重要作用.
 \end{remark}
 
 
@@ -181,20 +181,20 @@ $(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间，$T:X_1 \right
 \section{遍历性}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-引入遍历的概念是为了在同构意义下更好地分类保测系统。试想如果某个$B\in\ms{B}$使得$T^{-1}(B)=B$，那么$T$在某种意义下就是可以看成$T|_B$和$T|_{B^{c}}$的组合。以此下去，这样我们就可以把把$T$分解成若干个不可约的变换的组合。如果$T$在这种意义下是不可约的，那么满足上面条件的$B$一定是$m(B)=0$或$m(B)=1$,这种不可约的性质被称作遍历。更准确的，我们定义遍历：
+引入遍历的概念是为了在同构意义下更好地分类保测系统.试想如果某个$B\in\ms{B}$使得$T^{-1}(B)=B$,那么$T$在某种意义下就是可以看成$T|_B$和$T|_{B^{c}}$的组合.以此下去,这样我们就可以把把$T$分解成若干个不可约的变换的组合.如果$T$在这种意义下是不可约的,那么满足上面条件的$B$一定是$m(B)=0$或$m(B)=1$,这种不可约的性质被称作遍历.更准确的,我们定义遍历：
 
 \begin{definition}
-设$(X,\ms{B},m,T)$是一个保测系统。$T$是遍历的，如果$B\in\ms B $满足$T^{-1}(B)=B$,那么$m(B)=0$或者$m(B)=1$。
+设$(X,\ms{B},m,T)$是一个保测系统.$T$是遍历的,如果$B\in\ms B $满足$T^{-1}(B)=B$,那么$m(B)=0$或者$m(B)=1$.
 \end{definition}
 
-遍历有几个等价的条件，如下。
+遍历有几个等价的条件,如下.
 \begin{theorem}
-$T:X \rightarrow X$是概率空间$(X,\ms{B},m)$上自身到自身的保测变换。以下条件是等价的：
+$T:X \rightarrow X$是概率空间$(X,\ms{B},m)$上自身到自身的保测变换.以下条件是等价的：
 \begin{enumerate}[(i)]
-\item $T$是遍历的。
-\item 如果$B\in\ms B$满足$m(B\bigtriangleup T^{-1}(B))=0$,那么$m(B)=0$或者$m(B)=1$。
-\item 对任意的$B\in\ms B$,$m(B)>0$,那么$m(\bigcup_{n=1}^{\infty}T^{-n}A)=1$。
-\item 对每个$A,B\in\ms B$,$m(A)>0$，$m(B)>0$，那么存在$n>0$使得$m(T^{-n}A\cap B)>0$。
+\item $T$是遍历的.
+\item 如果$B\in\ms B$满足$m(B\bigtriangleup T^{-1}(B))=0$,那么$m(B)=0$或者$m(B)=1$.
+\item 对任意的$B\in\ms B$,$m(B)>0$,那么$m(\bigcup_{n=1}^{\infty}T^{-n}A)=1$.
+\item 对每个$A,B\in\ms B$,$m(A)>0$,$m(B)>0$,那么存在$n>0$使得$m(T^{-n}A\cap B)>0$.
 \end{enumerate}
 \end{theorem}
 
@@ -220,7 +220,7 @@ $\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.
 \section{极小性}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}
-动力系统$(X,T)$称为极小的，如果他不真包含任何闭不变子空间。如果$(Y,T)$是极小的子系统，就称为$X$的极小集。极小集中的点称为极小点。
+动力系统$(X,T)$称为极小的,如果他不真包含任何闭不变子空间.如果$(Y,T)$是极小的子系统,就称为$X$的极小集.极小集中的点称为极小点.
 \end{definition}
 为了本节的主要定理,我们引入轨道:
 \begin{definition}
@@ -229,11 +229,11 @@ $\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.
 下面是熟知的动力系统中极小性的等价定理:
 \begin{theorem}
 \label{t:minimal}
-对于动力系统$(X,T)$，以下命题等价：
+对于动力系统$(X,T)$,以下命题等价：
 \begin{enumerate}[(i)]
 \item $(X,T)$为极小的；
-\item 对任何$x\in X$，$\overline{orb(x,T)}=X$；
-\item 对任何非空开集$U$，存在有限子集$A\subset \mathbb{N}$，使得$$\bigcup_{n\in A}T^{-n}U=X$$
+\item 对任何$x\in X$,$\overline{orb(x,T)}=X$；
+\item 对任何非空开集$U$,存在有限子集$A\subset \mathbb{N}$,使得$$\bigcup_{n\in A}T^{-n}U=X$$
 \end{enumerate}
 \end{theorem}
 \begin{remark}
@@ -245,7 +245,7 @@ $\int_C \mathbb{E}(f|\ms{C})\mathrm d m=\int_C f\mathrm d m,\forall C\in \ms C$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{不变测度}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-对于任何一个动力系统$(X,T)$，它本身并没有测度的结构。但是我们是否可以构造出一个测度$\mu$并且期望它是不变测度.如果我们能够做到这一个点,就可以把遍历性推广到任意一个动力系统上,继而运用于拓扑动力系统中.本节的主要定理就是证明这样的测度是存在的.
+对于任何一个动力系统$(X,T)$,它本身并没有测度的结构.但是我们是否可以构造出一个测度$\mu$并且期望它是不变测度.如果我们能够做到这一个点,就可以把遍历性推广到任意一个动力系统上,继而运用于拓扑动力系统中.本节的主要定理就是证明这样的测度是存在的.
 
 对于一个紧致的度量空间,有一个自然的Borel代数$\B (X)$,即有全部开集生成的$\sigma$代数.用$\mathcal{M}(X)$记$\mathcal{B}(X)$上的所有概率测度的集合.记$C(X)$为$X$到$\mathbb{C}$上的全体连续函数,度量取一致度量,即$\|f\|=\sup\{\|f(x)\|:x\in X\}$.
 
@@ -353,11 +353,14 @@ $(X,T)$为动力系统且$\mu\in\mathcal{M}^e(X)$,则几乎所有点都是generi
 \begin{enumerate}[(i)]
 \item $\forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$一致收敛到一个常值函数;
 \item $\forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$逐点收敛到一个常值函数;
-\item 存在$\mu\in\mathcal{M}(X,T)$,使得对任意$f\in C(XA)$及$x\in X,\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)\rightarrow \int f \mathrm d \mu$
+\item 存在$\mu\in\mathcal{M}(X,T)$,使得对任意$f\in C(XA)$及$x\in X,\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)\rightarrow \int\!f \, \mathrm d \mu$
 \item $T$是唯一遍历的.
 \end{enumerate}
 \end{theorem}
 
+\begin{example}
+设$X=S^1=\mathbb{R}/\mathbb{Z}$为一个圆周.$Tx=x+a$,其中$a$是一个无理数,$\mu$为$\mathbb{R}$上诱导的Lebesgue测度,则$(S^1,\mathscr{B}(S^1),\mu,T)$是遍历的.证明详见\cite{hy} p34.	
+\end{example}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{符号系统中的可加及次可加一致遍历定理}
@@ -369,8 +372,8 @@ $(X,T)$为动力系统且$\mu\in\mathcal{M}^e(X)$,则几乎所有点都是generi
 \section{符号系统的概念和两个等价定理}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}
-带有离散拓扑的有限集$A$称为字母表。$A$中的元素称为字母。给$A^{\mathbb{Z}}$以离散拓扑。那么$A^{\mathbb{Z}}$是紧致的。若在给与$A^{\mathbb{Z}}$以度量$$\parallel\! x,y\!\parallel =\sum_{k=-\infty}^{+\infty}{\delta (x_k,y_k)\over 2^{|k|}}$$
-其中$x_k,y_k$分别是$x,y$的第$k$个分量，
+带有离散拓扑的有限集$A$称为字母表.$A$中的元素称为字母.给$A^{\mathbb{Z}}$以离散拓扑.那么$A^{\mathbb{Z}}$是紧致的.若在给与$A^{\mathbb{Z}}$以度量$$\parallel\! x,y\!\parallel =\sum_{k=-\infty}^{+\infty}{\delta (x_k,y_k)\over 2^{|k|}}$$
+其中$x_k,y_k$分别是$x,y$的第$k$个分量,
 \begin{equation*}
 \delta(a,b)=
 \begin{cases}
@@ -379,12 +382,12 @@ $(X,T)$为动力系统且$\mu\in\mathcal{M}^e(X)$,则几乎所有点都是generi
 \end{cases}
 \end{equation*}
 
-则$A^{\mathbb{Z}}$是可度量的。定义
+则$A^{\mathbb{Z}}$是可度量的.定义
 \begin{align*}
 T:& A^{\mathbb{Z}}\rightarrow A^{\mathbb{Z}}\\
   & Ta_k=a_{k+1}
 \end{align*}
-称$(A^{\mathbb{Z}},T)$为转移。若$B\subseteq A^{\mathbb{Z}}$在$T$下不变的闭空间，则$(B,T)$称为子转移。
+称$(A^{\mathbb{Z}},T)$为转移.若$B\subseteq A^{\mathbb{Z}}$在$T$下不变的闭空间,则$(B,T)$称为子转移.
 
 \end{definition}
 
@@ -393,11 +396,11 @@ T:& A^{\mathbb{Z}}\rightarrow A^{\mathbb{Z}}\\
 \begin{enumerate}[(i)]
 \item 记$Sub(w)$为所有$w$的所有子词.空词记为$\epsilon$.
 \item 记$\mathcal{W}=\mathcal{W}(\Omega)$为所有$w\in \Omega$的有限子词全体.
-\item $\#M$为集合$M$中词的个数。$\#_vM$为$v$在$M$中出现的次数。$|\cdot|$表示一个词的长度,即含有字母的个数
+\item $\#M$为集合$M$中词的个数.$\#_vM$为$v$在$M$中出现的次数.$|\cdot|$表示一个词的长度,即含有字母的个数
 \item 如果对一个$u\in \mathcal{W}$,$w\in \mathcal{W}$满足%
 $$w u\in \mathcal{W},\#_u(w u)=2,$$
-且$u$是$wu$的前缀,即$wu$是以$u$开头的。那么$w$就称作$u$的一个回复词.这个定义是在\cite{d}中提出的.
-\item $u\in \mathcal{W}$的回复词集记为$\mathcal{R}(u)=\mathcal{R}(u,\mathcal{W})$。$\mathcal{R}^n=\bigcup_{v\in \mathcal{W},\|v|=n}\mathcal{R}(v)$。
+且$u$是$wu$的前缀,即$wu$是以$u$开头的.那么$w$就称作$u$的一个回复词.这个定义是在\cite{d}中提出的.
+\item $u\in \mathcal{W}$的回复词集记为$\mathcal{R}(u)=\mathcal{R}(u,\mathcal{W})$.$\mathcal{R}^n=\bigcup_{v\in \mathcal{W},\|v|=n}\mathcal{R}(v)$.
 \item 令$m(n)=min\{|x\|:x\in \mathcal{R}^n\}$.
 \item 词$w\in \mathcal{W}$的柱$[w]$为$\{(\ldots,w_0,w_1,\ldots,w_n,\ldots)\}$,其中$n=|w\|$且$w$的第一个分量$w_0$出现在$A^{\mathcal{Z}}$第0个分量上.
 \end{enumerate}
@@ -414,9 +417,9 @@ $$w u\in \mathcal{W},\#_u(w u)=2,$$
 \label{t:subshift}
 $(\Omega,T)$是一个子转移,那么
 \begin{enumerate}[(i)]
-\item 子转移$(\Omega,T)$是极小的，当且仅当对每个$w\in \mathcal{W}$存在$R(w)>0$使得对%
-每个$v\in \mathcal{W}$且$|v|\geq R(w)$,$w$都是$v$的一个因子。
-\item 子转移$(\Omega,T)$是唯一遍历的，当且仅当$$\lim_{|w| \to \infty}{\#_v(w)\over |w |}<\infty, \forall v\in \mathcal{W}$$
+\item 子转移$(\Omega,T)$是极小的,当且仅当对每个$w\in \mathcal{W}$存在$R(w)>0$使得对%
+每个$v\in \mathcal{W}$且$|v|\geq R(w)$,$w$都是$v$的一个因子.
+\item 子转移$(\Omega,T)$是唯一遍历的,当且仅当$$\lim_{|w| \to \infty}{\#_v(w)\over |w |}<\infty, \forall v\in \mathcal{W}$$
 \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -476,10 +479,10 @@ $$w=\sum_{a\in A} a\cdot w_a$$
 \end{proof}
 \begin{lemma}
 \label{l:1}
-设$(\Omega,T)$是极小的子转移。那么下面的条件等价：
+设$(\Omega,T)$是极小的子转移.那么下面的条件等价：
 \begin{enumerate}
 \item $(\Omega,T)$是非周期的；
-\item $m(n)\rightarrow \infty,n\rightarrow \infty$。
+\item $m(n)\rightarrow \infty,n\rightarrow \infty$.
 \end{enumerate}
 \end{lemma}
 
@@ -536,11 +539,11 @@ $p_{z,u}(w)=\#_{zu}(w)$
 一个$\mathcal{W}$的序列${w_n}$称作partitioning序列,如果$|x_n|<|x_{n+1}|$
 \end{definition}
 \begin{theorem}
-$(\Omega,T)$是极小的子转移。那么下列条件是等价的：
+$(\Omega,T)$是极小的子转移.那么下列条件是等价的：
 \begin{enumerate}[(i)]
 \item $(\Omega,T)$是唯一遍历的；
-\item 极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在，对每个取值于Banach空间的可加函数。
-\item 极限$\lim_{|w|\to \infty}\frac{1}{n}\sum_{j=1}^n{f(T^jw)}$存在且对$w\in \Omega$一致收敛，其中$f$是取值于Banach空间的连续函数。
+\item 极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在,对每个取值于Banach空间的可加函数.
+\item 极限$\lim_{|w|\to \infty}\frac{1}{n}\sum_{j=1}^n{f(T^jw)}$存在且对$w\in \Omega$一致收敛,其中$f$是取值于Banach空间的连续函数.
 \end{enumerate}
 \end{theorem}
 
@@ -638,19 +641,19 @@ A^{-1}(T^n\omega)\ldots A^{-1}(T^{-1}\omega) &n<0
 \end{definition}
 
 \begin{definition}
-以下是论文中要用的等价概念。
+以下是论文中要用的等价概念.
 \begin{description}
-\item[(SET)] 对任意次可加的函数$F$,极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在且等于$\inf_{n\in \mathbb{N}}F^{(n)}$，其中$F^{(n)}=\max\{{F(v)\over |v|}:v\in\mathcal{W},|v|=n\}$
-\item[(PQ)] 存在一个常数$C>0$满足$\nu(v)\geq C$对任意的$v\in \mathcal{W}$。其中
+\item[(SET)] 对任意次可加的函数$F$,极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在且等于$\inf_{n\in \mathbb{N}}F^{(n)}$,其中$F^{(n)}=\max\{{F(v)\over |v|}:v\in\mathcal{W},|v|=n\}$
+\item[(PQ)] 存在一个常数$C>0$满足$\nu(v)\geq C$对任意的$v\in \mathcal{W}$.其中
 $$l_v(w)=(maximal\, number\, o\!f\, disj\!oint\, copie\!s\, o\!f\, v\, in\, w)\cdot |v|$$
 $$\nu(v)=\liminf_{|w|\to \infty}{l_v(w)\over |w|}$$
 \end{description}
 \end{definition}
 \begin{theorem}
-$(\Omega,T)$是极小的子转移。那么下列条件是等价的：
+$(\Omega,T)$是极小的子转移.那么下列条件是等价的：
 \begin{enumerate}[(i)]
 \item 子转移$(\Omega,T)$满足$(SET)$；
-\item 子转移$(\Omega,T)$满足$(PQ)$。
+\item 子转移$(\Omega,T)$满足$(PQ)$.
 \end{enumerate}
 \end{theorem}
 
@@ -726,11 +729,12 @@ $${l(w)\over |w|}=\sum_{j=1}^k {l_{v_{n(j)}}\over |w|}<\frac{1}{2}$$
 %\bibliography{ref}
 
 \begin{thebibliography}{10}
-\bibitem{d} F. Durand, A characterization of substitutive sequences using return words, Discrete Math.,179(1998),89-101
+\bibitem{d} F. Durand, A characterization of substitutive sequences using return words, Discrete Math., 179(1998), 89-101
 \bibitem{l} D. Lenz, Unifrom ergodic theorems on subshitfs over a finite alphabet, Ergodic Theory Dynam. Systems, 22(2002), No.1, 245-255
-\bibitem{q} M. Queff\'elec, Substitution Dynamical Systems - Spectral Analysis, Lecture Notes in Math.,2184, Springer, Berlin, Heidleberg, New York, 1987
-\bibitem{hy} 叶向东,黄文,邵松, 拓扑动力系统概论, 科学出版社, 北京, 2008
+\bibitem{q} M. Queff\'elec, Substitution Dynamical Systems - Spectral Analysis, Lecture Notes in Math., 2184, Springer, Berlin, Heidleberg, New York, 1987
 \bibitem{pw} P. Walters, An Introduction to Ergodic Theory, Graduate Texts in Math., 79, Springer, New York-Berlin, 1982
+\bibitem{hy} 叶向东,黄文,邵松, 拓扑动力系统概论, 科学出版社, 北京, 2008
+
 
 
 
