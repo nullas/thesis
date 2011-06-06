@@ -137,6 +137,8 @@
 \chapter*{\centerline{Abstract}}
 \thispagestyle{fancy}
 This article is fucused on the uniform additive and subadditive ergodic theorem on the a subshift over a finite alphabet. First we introduce the  preserving measure and unique ergodicity on general dynamic system. Then we give the description of minimal and uniquely ergodic subshift. Last we prove the uniform additive and subadditive ergodic theorem on symbol system.
+
+\medskip
 {\bf Keywords}:\emph{minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem,}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -156,7 +158,7 @@ This article is fucused on the uniform additive and subadditive ergodic theorem 
 $B_2 \in \mathscr{B}_2\Rightarrow T^{-1}(B_2) \in \mathscr{B}_1$)
 \item 变换$T:X_1 \rightarrow X_2$是保测变换,如果$T$是可测的,且
 $$m_1(T^{-1}(B_2))=m_2(B_2), \forall B_2 \in \mathscr{B}_2$$
-\item 特别地,我们把概率空间
+\item 特别地,我们把概率空间$(X,\ms{B},\mu)$以及其上的保测自变换$T:X\rightarrow X$,我们称四元组$(X,\ms{B},\mu,T)$为保测系统.
 \end{enumerate}
 \end{definition}
 
@@ -179,10 +181,10 @@ $(X_1,\mathscr{B}_1,m_1),(X_2,\mathscr{B}_2,m_2)$是概率空间，$T:X_1 \right
 \section{遍历性}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-引入遍历的概念是为了在同构意义下分类$T:X \rightarrow X$。试想如果某个$B\in\ms{B}$使得$T^{-1}(B)=B$，那么$T$在某种意义下就是可以看成$T|_B$和$T|_{B^{c}}$的组合。以此下去，这样我们就可以把把$T$分解成若干个不可约的变换的组合。如果$T$在这种意义下是不可约的，那么满足上面条件的$B$一定是$m(B)=0$或$m(B)=1$,这种不可约的性质被称作遍历。更准确的，我们定义遍历：
+引入遍历的概念是为了在同构意义下更好地分类保测系统。试想如果某个$B\in\ms{B}$使得$T^{-1}(B)=B$，那么$T$在某种意义下就是可以看成$T|_B$和$T|_{B^{c}}$的组合。以此下去，这样我们就可以把把$T$分解成若干个不可约的变换的组合。如果$T$在这种意义下是不可约的，那么满足上面条件的$B$一定是$m(B)=0$或$m(B)=1$,这种不可约的性质被称作遍历。更准确的，我们定义遍历：
 
 \begin{definition}
-设$(X,\ms{B},m)$是一个概率空间。$T:X \rightarrow X$是$X$到自身的一个变换。$T$是遍历的，如果$B\in\ms B $满足$T^{-1}(B)=B$,那么$m(B)=0$或者$m(B)=1$。
+设$(X,\ms{B},m,T)$是一个保测系统。$T$是遍历的，如果$B\in\ms B $满足$T^{-1}(B)=B$,那么$m(B)=0$或者$m(B)=1$。
 \end{definition}
 
 遍历有几个等价的条件，如下。
