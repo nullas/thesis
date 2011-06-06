@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt,oneside]{book}
 \usepackage{indentfirst,fancyhdr,graphicx}
-\usepackage[BoldFont]{xeCJK}
+\usepackage[SlantFont,BoldFont]{xeCJK}
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -8,6 +8,7 @@
 \usepackage{amsthm}
 \usepackage{enumerate}
 %%%%%%Fonts
+
 \setCJKmainfont[BoldFont={Adobe Heiti Std}, ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
 \setCJKsansfont{Adobe Heiti Std}
 \setCJKmonofont{Adobe Fangsong Std}
@@ -132,14 +133,14 @@
 本文主要研究了符号系统上的一致可加和次可加遍历定理.本文首先介绍了一般动力系统上的不变测度和唯一遍历性.给出了符号系统上极小性和唯一遍历的刻画.本文最后证明了极小系统上一致可加和次可加遍历定理的充要条件.
 
 \medskip
-{\bf 关键字}: \emph{极小性,唯一遍历性,子转移,一致次可加遍历定理.}
+{\bf 关键字}: \emph{ 极小性,唯一遍历性,子转移,一致次可加遍历定理.}
 
 \chapter*{\centerline{Abstract}}
 \thispagestyle{fancy}
 This article is fucused on the uniform additive and subadditive ergodic theorem on the a subshift over a finite alphabet. First we introduce the  preserving measure and unique ergodicity on general dynamic system. Then we give the description of minimal and uniquely ergodic subshift. Last we prove the uniform additive and subadditive ergodic theorem on symbol system.
 
 \medskip
-{\bf Keywords}: \emph{minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem}
+{\bf Keywords}: \emph{ minimal system, unique ergodicity, subshift, uniform subadditive ergodic theorem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{不变测度与唯一遍历}
@@ -314,7 +315,7 @@ $$
 这样我们就证明了,对任何一个动力系统$(X,T)$,我们总可以找到一个测度,使得$T$称为保测变换.
 下面我们要做的是给满足满足遍历性质或者极小性质的不变测度一个刻画.
 
-记$\mathcal{W}(X,T)\subset\mathcal{M}(X)$为全体$T$不变$Borel$概率测度,$\mathcal{M}^e(X,T)\subset\mathcal{M}(X,T)$为全体遍历测度.
+记$\mathcal{M}(X,T)\subset\mathcal{M}(X)$为全体$T$不变$Borel$概率测度,$\mathcal{M}^e(X,T)\subset\mathcal{M}(X,T)$为全体遍历测度.
 
 \begin{theorem}
 设$(X,T)$为动力系统,则
@@ -367,7 +368,7 @@ $(X,T)$为动力系统且$\mu\in\mathcal{M}^e(X)$,则几乎所有点都是generi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \thispagestyle{fancy}
-这章中首先引入了符号系统的概念.然后给出了在这个特殊的动力系统内,给出了符号系统特有的极小性和唯一遍历性的判别法.之后讨论了,符号系统中一致可加收敛定理和一致次可加收敛定理的充要条件.
+这章中首先介绍了符号系统.随后给出了在这个特殊的动力系统内,给出了符号系统特有的极小性和唯一遍历性的判别法.之后讨论了,符号系统中一致可加收敛定理和一致次可加收敛定理的充要条件.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{符号系统的概念和两个等价定理}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -387,7 +388,7 @@ $(X,T)$为动力系统且$\mu\in\mathcal{M}^e(X)$,则几乎所有点都是generi
 T:& A^{\mathbb{Z}}\rightarrow A^{\mathbb{Z}}\\
   & Ta_k=a_{k+1}
 \end{align*}
-称$(A^{\mathbb{Z}},T)$为转移.若$B\subseteq A^{\mathbb{Z}}$在$T$下不变的闭空间,则$(B,T)$称为子转移.
+称$(A^{\mathbb{Z}},T)$为转移.若$\Omega\subseteq A^{\mathbb{Z}}$在$T$下不变的闭空间,则$(\Omega,T)$称为子转移.
 
 \end{definition}
 
@@ -444,7 +445,7 @@ $(\Leftarrow)$紧致度量空间上的连续函数一致连续.故对任意$\eps
 $$|f(w)-f(v^*)|<\epsilon,\forall w\in [v]$$
 这就是说$$|f(w)-\sum_{v\in A^N}f(v^*)\delta_v(w)|<\epsilon$$
 
-最后我们计算:
+因为$f$是紧致集的连续函数,故$\{\frac{1}{n}\sum_{k=0}^{n-1}f(T^kw)\}_{n=1}^\infty$是有界的,故存在收敛子列.最后我们计算:
 \begin{align*}
 &|\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}f(T^kw)
 -\sum_{v\in A^{N}}f(v^*)\lim_{|w| \to \infty}{\#_v(w)\over |w |}|\\
@@ -453,7 +454,7 @@ $$|f(w)-f(v^*)|<\epsilon,\forall w\in [v]$$
 \leq&\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}|f(T^kw)-\sum_{v\in A^N}f(v^*)\delta_v(T^kw)|+\lim_{n\to \infty}\frac{1}{n}\sum_{v\in A^N}|f(v^*)j_v|\\
 \leq&\epsilon
 \end{align*}
-由$\epsilon$的任意性,以及题设,知$\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}f(T^kw)$存在,故由唯一遍历的等价条件知,$(\Omega,T)$是唯一遍历的.
+由$\epsilon$的任意性,又LHS的第二项与$w$无关,以及题设,知$\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^{n-1}f(T^kw)$收敛于一个常值函数,故由唯一遍历的等价条件知,$(\Omega,T)$是唯一遍历的.
 
 \end{enumerate}
 \end{proof}
@@ -516,7 +517,7 @@ $(B,\|\cdot\|)$是Banach空间.一个函数$F:\mathcal{W}\rightarrow B$是可加
 
 \begin{definition}
 在极小系统$(\Omega,T)$中,$u,v\in\mathcal{W}$给定.我们可以将$x$相对于$u$唯一分解为$x=au_1\ldots u_lb$满足:
-$$au_1\ne\emptyset,\#_u(x)=l,u\, pre\!fix\, o\!f\, u_j\ldots u_lb,j=1,\ldots,l$$
+$$au_1\ne\emptyset,\#_u(x)=l,u\text{是}u_j\ldots u_lb\text{的前缀},j=1,\ldots,l$$
 这种分解称为$x$的$u$-partition.
 \end{definition}
 
@@ -546,6 +547,10 @@ $(\Omega,T)$是极小的子转移.那么下列条件是等价的：
 \item 极限$\lim_{|w|\to \infty}\frac{1}{n}\sum_{j=1}^n{f(T^jw)}$存在且对$w\in \Omega$一致收敛,其中$f$是取值于Banach空间的连续函数.
 \end{enumerate}
 \end{theorem}
+
+\begin{definition}
+一个系统称为严格遍历的,如果它既是极小的又是唯一遍历的.
+\end{definition}
 
 下面的引理是证明上面的主要定理关键.
 
@@ -583,7 +588,7 @@ $$c(m(|x_n|))\leq {\epsilon\over 2}$$
 
 \begin{lemma}
 \label{l:3}
-题设如上个引理.$f:\Omega\rightarrow B$是连续函数.那么$\frac{1}{n}\sum_{j=1}^nf(T^jw)$收敛于一个常数方程.
+题设如上个引理.$f:\Omega\rightarrow B$是连续函数.那么$\frac{1}{n}\sum_{j=1}^nf(T^jw)$收敛于一个常数函数.
 \end{lemma}
 \newcommand{\w}{\omega}
 \begin{proof}
@@ -617,7 +622,7 @@ $(i)\Rightarrow(ii)$直接利用引理\ref{l:2}.$(ii)\Rightarrow(iii)$直接利�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{一致次可加遍历定理}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-研究次可加函数的动因是多方面的.
+研究次可加函数的动机是多方面的.
 
 
 首先,按照Birkhoff遍历定理中的记法,$S_n$满足可加性,即$S_{n+m}(f)=S_n(f)+S_m(f\circ T^n)$.如果改成小于号,即$S_{n+m}(f)\leq S_n(f)+S_m(f\circ T^n)$,对定理会有什么影响.
@@ -645,7 +650,7 @@ A^{-1}(T^n\omega)\ldots A^{-1}(T^{-1}\omega) &n<0
 \begin{description}
 \item[(SET)] 对任意次可加的函数$F$,极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在且等于$\inf_{n\in \mathbb{N}}F^{(n)}$,其中$F^{(n)}=\max\{{F(v)\over |v|}:v\in\mathcal{W},|v|=n\}$
 \item[(PQ)] 存在一个常数$C>0$满足$\nu(v)\geq C$对任意的$v\in \mathcal{W}$.其中
-$$l_v(w)=(maximal\, number\, o\!f\, disj\!oint\, copie\!s\, o\!f\, v\, in\, w)\cdot |v|$$
+$$l_v(w)=(w\text{中}v\text{的不相交拷贝的最大数})\cdot |v|$$
 $$\nu(v)=\liminf_{|w|\to \infty}{l_v(w)\over |w|}$$
 \end{description}
 \end{definition}
