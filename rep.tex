@@ -1,0 +1,367 @@
+% !Mode:: "TeX:UTF-8"
+\documentclass[compress,mathserif,red]{beamer}
+\usepackage{indentfirst,fancyhdr,graphicx}
+\usepackage[SlantFont,BoldFont]{xeCJK}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usetheme{Antibes} % Beamer theme v 3.0
+\usecolortheme{lily}
+\beamertemplateshadingbackground{white!15}{yellow!50}
+
+\setCJKmainfont[BoldFont={Adobe Heiti Std}, ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+\setCJKsansfont{Adobe Heiti Std}
+\setCJKmonofont{Adobe Fangsong Std}
+\setCJKfamilyfont{Microsoft YaHei}{Microsoft YaHei}
+\setCJKfamilyfont{Adobe Song Std}{Adobe Song Std}
+\setCJKfamilyfont{Adobe Heiti Std}{Adobe Heiti Std}
+\setCJKfamilyfont{Adobe Kaiti Std}{Adobe Kaiti Std}
+\setCJKfamilyfont{Adobe Fangsong Std}{Adobe Fangsong Std}
+\setmainfont{Times New Roman}
+\setsansfont[BoldFont={Courier New Bold}]{Courier New}
+\setmonofont[BoldFont={Arial:style=Bold}]{Arial}
+\begin{document}
+
+
+\title{薛定谔算子的谱}
+\author{赵鑫}
+\institute{中国科学技术大学数学系}
+\date{\today}
+
+
+
+\frame{\titlepage}
+
+
+
+
+
+\begin{frame}
+\frametitle{薛定谔算子的谱}
+在这篇论文中主要介绍了关于薛定谔的谱。首先引出了连续泛函的微积分。
+然后介绍了谱测度，利用谱测度证明了自伴算子的谱理论的主要结果--积算子形式下的谱定理。
+运用Radon–Nikodym定理将谱分解。介绍了两个关于薛定谔算子的重要结果.
+最后对此谱定理进行了应用，得到了在一个较一般的情况下,存在一个剩余集使得遍历薛定谔算子没有绝对连续谱.
+\end{frame}
+\section{Borel functional calculus}
+\subsection{polynomial on bounded self-adjoint operators}
+\begin{frame}
+\frametitle{谱}
+\begin{corollary}
+设$P(x)=\sum_{n=0}^N {a_n
+x^n}$和$P(A)=\sum_{n=0}^N {a_n
+ A^n}$. 那么
+ $$\sigma(P(A))=\{P(\lambda) \mid \lambda \in
+ \sigma(A)\}$$.
+\end{corollary}
+\end{frame}
+
+
+
+\subsection{polynomial on bounded self-adjoint operators}
+\begin{frame}
+\frametitle{模}
+\begin{corollary}
+令$A$为一个有界自伴算子。那么$$\| P(A)
+ \|=\sup_{\lambda \in \sigma(A)}\left| P(\lambda) \right|.$$
+\end{corollary}
+\end{frame}
+
+
+
+
+\subsection{continuous functions on bounded self-adjoint operators}
+\begin{frame}
+\frametitle{$C(\sigma)$作用在有界自伴算子上}
+\begin{theorem}
+设$A$是$Hilbert$空间$\mathcal{H}$上的有界自伴算子.那么存在唯一的映射$\phi
+ :C(\sigma (A))\rightarrow \mathcal{L}(\mathcal{H})$
+\end{theorem}
+\end{frame}
+
+
+
+
+\section{spectrum measure}
+\subsection{definition}
+\begin{frame}
+\frametitle{引子}
+令$\varphi \in \mathcal{H}$. 那么$f\rightarrow(\varphi,f(A)
+ \varphi)$是在$C(\sigma(A))$上的正线性泛函. 因此由Riesz-Markov
+ 定理, 在紧集$\sigma(A)$上存在唯一的测度$\mu_{\varphi}$满足
+ $$(\varphi,f(A)
+ \varphi)=\int_{\sigma(A)} f(\lambda)d\mu_{\varphi},\forall f\in C(\sigma(A))$$.
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{定义}
+\begin{definition}
+B测度$\mu_{\varphi}$叫做向量$\varphi$的谱测度
+\end{definition}
+
+\end{frame}
+
+
+\subsection{spectral theory}
+\begin{frame}
+\frametitle{定理}
+\begin{definition}
+一个向量$\varphi \in
+\mathcal{H}$叫做$A$的循环向量, 如果有限的$\{A^n \varphi
+\}_{n=0}^{\infty}$的线性组合在$\mathcal{H}$中稠密.
+\end{definition}
+
+\medskip
+\begin{theorem}
+设$A$是$\mathcal{H}$上一个有界自伴算子。如果$A$具有循环向量是$\varphi$.
+那么存在酉算子$U: \mathcal{H} \rightarrow L^2(\sigma(A),d\mu_{\varphi})$
+满足$$UAU^{-1}f(\lambda)=\lambda
+f(\lambda),$$ 其中$f \in L^2(\sigma(A),d\mu_{\varphi})$.
+
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{谱定理}
+\begin{theorem}
+设$A$是可分Hilbert空间$\mathcal{H}$上的一个有界自伴算子.那么,在$\sigma(A)$上存在测度$\{\mu_n\}_{n=1}^N,
+ N\in
+\{1,2,\ldots,\}\cup \{+\infty\}$和酉算子$U: \mathcal{H} \rightarrow
+\bigoplus _{n=1}^N
+L^2(\mathbb{R},d\mu_n)$满足$$(UAU^{-1}\varphi_n)(\lambda)=\lambda
+\varphi_n(\lambda)$$将$\varphi \in\bigoplus _{n=1}^N
+L^2(\mathbb{R},d\mu_n)$写作$N$元组$\langle
+\varphi_1(\lambda),\ldots,\varphi_N(\lambda) \rangle$.
+这种对$A$的表示就叫做谱表示.
+\end{theorem}
+
+\end{frame}
+
+
+\section{Spectral decomposition} % Bookmark information
+\subsection{Radon-Nikodym theorem} % Bookmark information
+\begin{frame}
+\frametitle{Radon-Nikodym定理}
+\begin{definition}
+如果$\mu$ 和 $\nu$ 是两个在可测空间$(\Omega,\Sigma)$上$\sigma$-有限的测度,那么就存在两个$\sigma$-有限的测度$\nu_0$和
+$\nu_1$满足:
+
+ (a) $\nu_0(E)=\int f d\mu.$
+
+ (b) $\nu_1$和$\mu$ 是奇异的.
+
+并且这两个测度是唯一确定的.
+\end{definition}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{refinement}
+\begin{corollary}
+$\mathbb{R}$上的一个测度$\nu$可以被分解
+$$\nu=\nu_{ac}+\nu_{sc}+\nu_{pp}.$$
+其中$\Sigma_{ac}$为谱中相对于$R$上的Lebesgue测度绝对连续的部分;\\
+$\Sigma_{sc}$为谱中奇异部分的连续的部分;\\
+$\Sigma_{pp}$为纯点测度.
+\end{corollary}
+\end{frame}
+
+
+
+\subsection{spectral decomposition}
+\begin{frame}
+\frametitle{谱分解}
+\begin{theorem}
+$$\sigma(T)=\sigma_{ac}(T)+\sigma_{sc}(T)+\sigma_{pp}(T).$$
+\end{theorem}
+\end{frame}
+
+
+\section{Spectral analysis of ergodic Schrodinger operator} % Bookmark information
+\subsection{definition} % Bookmark information
+\begin{frame}
+\frametitle{定义}
+\begin{definition}
+$T:\Omega\rightarrow\Omega$是可逆的,如果对任何满足
+$$\mu(T^{-1}(E)\triangle(E))=0$$
+的$E \in \Omega$
+有$$\mu(E)=0 \  or \  \mu(E)=1$$
+则称$T$是遍历的.
+\end{definition}
+\begin{definition}
+$T:\Omega\rightarrow\Omega$是可逆遍历的,$f:\Omega \rightarrow \mathbb{R}$是有界可测函数,
+$$V_\omega(n)=f(T^n \omega),\omega \in \Omega, n \in \mathbb{Z}$$
+$V_\omega$称为位势.
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{遍历薛定谔算子}
+\begin{definition}
+$$[H_\omega \Psi](n)=\Psi(n+1)+\Psi(n-1)+V_\omega(n)\Psi(n)$$
+其中$V_\omega$是位势.
+则${ \{ H_\omega \} }_{\omega \in \Omega}$称为薛定谔算子的遍历族.
+\end{definition}
+\end{frame}
+
+\subsection{main theorem} % Bookmark information
+\begin{frame}
+\frametitle{主要定理}
+\begin{theorem}
+存在$\Sigma \in \mathbb{R}$使得对于$\mu$几乎所有的$\omega$有
+$$\sigma(H_\omega)=\Sigma$$
+\end{theorem}
+
+\medskip
+L. Pastur,Spectral properties of disordered systems in the one-body approximation,
+Communications in Mathematical Physics, 1980 - Springer
+\end{frame}
+
+\begin{frame}
+\frametitle{主要定理}
+\begin{theorem}
+存在$\Sigma_\bullet \in \mathbb{R}$使得对于$\mu$几乎所有的$\omega$有
+$$\sigma_\bullet(H_\omega)=\Sigma_\bullet,\bullet \in { \{ac,sc,pp \} }$$
+\end{theorem}
+
+\medskip
+H. Kunz and B. Souillard, Sur le spectre des op\'erateurs aux différences finies al\'eatoires,
+Comm. Math. Phys. 78 (1980/81), no. 2, 201-246.
+\end{frame}
+
+
+
+\section{generic singular spectrum for ergodic Schrodinger operators} % Bookmark information
+\subsection{the absolute continuous spectrum} % Bookmark information
+
+
+\begin{frame}
+\frametitle{绝对连续谱的确定}
+\begin{theorem} (Ishii 1973, Pastur 1980,Kotani 1984)
+$$\Sigma_{ac}={\overline{ \{ E \in \mathbb{R}:\gamma(E)=0 \} }}^{ess}$$
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{绝对连续谱的确定}
+
+$$M(f)=|\{E \in \mathbb{R} :\gamma_f(E)=0 \} |$$
+其中$| \cdot |$是Lebesgue测度.由定理八,我们知道
+$$\sigma(f)=\phi$$
+iff
+$$M(f)=0$$
+
+\end{frame}
+
+
+\subsection{Lyapunov exponent and m-function} % Bookmark information
+\begin{frame}
+\frametitle{Lyapunov指数}
+$$\gamma_f(E)=\lim_{n\to\infty}\int_\Omega \ln \| S^n_{f,E} (\omega) \|$$
+其中
+$$S^n_{f,E} (\omega)=S_{f,E}(T^{n-1}(\omega)) \cdot \cdot \cdot S_{f,E}(\omega)$$
+$$S_{f,E}(\omega)=\left( \begin{array}{ccc}
+E-f(\omega) & -1  \\
+
+1 & 0  \end{array} \right) $$
+\end{frame}
+
+\begin{frame}
+\frametitle{$m$ -函数}
+若$Im E>0$,有
+$$\gamma_f(E)=\int_\Omega -Re \ln m_{\omega,f}(E)d\mu(\omega)$$
+其中
+$$ m_{\omega,f}(E)=\lim_{n\to\infty}S_{f,E}(T^{n}(\omega))\cdot i $$
+
+
+\end{frame}
+
+
+
+
+
+\subsection{generic singular spectrum for ergodic Schrodinger operators} % Bookmark information
+\begin{frame}
+\frametitle{几个引理}
+\begin{lemma}
+对于$r>0,\Lambda>0$,函数
+$$(L^1(\Omega)\bigcap B_r(L^{\infty}(\Omega)),\| \cdot \|_1)\rightarrow \mathbb{R}, f\mapsto M(f)$$
+$$(L^1(\Omega)\bigcap B_r(L^{\infty}(\Omega)),\| \cdot \|_1)\rightarrow \mathbb{R}, f\mapsto \int^{\Lambda}_0 M(\lambda f)d\lambda $$
+是上半连续的.
+
+\end{lemma}
+\end{frame}
+
+\begin{frame}
+
+
+\frametitle{几个引理}
+\begin{proof}
+$$\Phi'=const \cdot \prod_{j=1}^{3}{(1-\frac{z}{z_j})}^{-\frac{2}{3}}$$
+
+$$\gamma_{f_n}\circ \Phi(0)=\frac{1}{2\pi}\int^{2\pi}_0 \gamma_{f_n}\circ \Phi(e^{i\theta})d\theta$$
+
+因为$\gamma_{f_n}(\Phi(0))\rightarrow \gamma_f(\Phi(0)) \ n\to\infty$,所以
+$$frac{1}{2\pi}\int^{2\pi}_0[\gamma_{f_n}\circ \Phi(e^{i\theta})-\gamma_{f}\circ \Phi(e^{i\theta})]d\theta \to 0$$
+由控制收敛定理,沿着$T$的边$J,K$的积分趋近于$0$.
+因此
+$$\int_I[\gamma_{f_n}(E)-\gamma_f(E)]g(E)dE\to 0$$
+
+\end{proof}
+\end{frame}
+
+\begin{frame}
+
+
+\frametitle{几个引理}
+\begin{proof}
+由Lyapunov指数的对$f$上半连续性以及控制收敛定理,
+$$\int_I max\{ \gamma_{f_n}(E)-\gamma_f(E),0 \}g(E)dE\to 0,$$
+
+选择$\delta>0$使得集合$X=\{E \in I:\gamma_f(E)<\delta \}$的测度小于$M(f)+\frac{\varepsilon}{4}$.那么
+$$\int_{I\backslash X}min\{\gamma_{f_n}(E)-\gamma_f(E),0\}dE\to 0.$$
+
+这说明对$n \geq n_0$,存在测度小于$\frac{\varepsilon}{4}$的集合$Y_n$使得$\forall E\in I\backslash (X\bigcup Y_n)$有$\gamma_{f_n}(E) \geq \frac{\delta}{2}$.就有$\limsup M(f_n) \leq M(f)+\frac{\varepsilon}{2}$,这与3矛盾.
+
+\end{proof}
+\end{frame}
+
+\begin{frame}
+\begin{lemma}
+$L^{\infty}(\Omega)$中存在稠密集$Z$使得$\forall s \in Z$满足
+\begin{enumerate}
+\item $s$只取有限个值
+\item $s(T^n(\omega))$,对几乎所有的$\omega$不是周期的
+\end{enumerate}
+
+\end{lemma}
+\end{frame}
+
+\begin{frame}
+\frametitle{主要定理}
+\begin{theorem}
+存在$C(\omega)$的剩余集,使得$\sigma_{ac}(f)=\phi$
+且对几乎所有$\lambda>0$都有$\sigma_{ac}(\lambda f)=\phi$
+
+\end{theorem}
+\begin{proof}
+$$M_\delta=\{ f \in C(\Omega):M(f)<\delta \}$$
+由引理一,$M_\delta$是开的;由引理三,$M_\delta$是稠密的.
+$$\{ f \in C(\Omega):\sigma(f)=\phi \}=\{ f \in C{\Omega):M(f)=0}=\bigcap_{\delta >0} M_\delta$$
+是剩余集.
+第二个断言的证明类似.
+\end{proof}
+\end{frame}
+
+
+\end{document} 
