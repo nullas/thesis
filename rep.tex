@@ -153,10 +153,14 @@ $\mathcal{M}(X)$是紧致的.
 \begin{frame}
 \frametitle{遍历测度}
 \begin{definition}
-对动力系统$(X,T)$,如果$\mathcal{M}^e(X)$中仅有一个元素,我们称这个系统是唯一遍历的.\pause
+对动力系统$(X,T)$,如果$\mathcal{M}^e(X)$中仅有一个元素,我们称这个系统是唯一遍历的.
 
 \medskip
 这就是说所有的不变测度中,只有一个测度,使得$(X,T)$是一个遍历系统.
+\pause
+
+\medskip
+如果这个系统还是极小的,那么就称为严格遍历.
 \end{definition}
 
 \end{frame}
@@ -200,15 +204,19 @@ $(\Omega,T)$是极小的$\Longleftrightarrow$对每个$w\in \mathcal{W}$存在$R
 \frametitle{唯一遍历的刻画}
 在符号系统中,极小性有如下的刻画:
 \begin{theorem}
-$(\Omega,T)$是极小的\\$\Longleftrightarrow$对每个$w\in \mathcal{W}$存在$R(w)>0$使得对%
-每个$v\in \mathcal{W}$且$|v|\geq R(w)$,$w$都是$v$的一个因子.
+$(X,T)$是唯一遍历的\\$Longleftrightarrow$
+$\forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$逐点收敛到一个常值函数
 \end{theorem}
 \pause
+在符号系统下的刻画:
 \begin{theorem}
 子转移$(\Omega,T)$是唯一遍历的\\$\Longleftrightarrow$ $\lim_{|w| \to \infty}{\#_v(w)\over |w |}<\infty, \forall v\in \mathcal{W}$
 \end{theorem}
 \end{frame}
 
+\begin{frame}
+\frametitle{两个引理}
+\end{frame}
 \begin{frame}
 \frametitle{}
 \end{frame}
