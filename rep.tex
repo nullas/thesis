@@ -99,6 +99,12 @@ $$m_1(T^{-1}(B_2))=m_2(B_2), \forall B_2 \in \mathscr{B}_2$$
 \begin{example}[$S^1$的无理旋转]
 设$X=S^1=\mathbb{R}/\mathbb{Z}$为一个圆周.$Tx=x+a$,其中$a$是一个无理数,$\mu$为$\mathbb{R}$上诱导的Lebesgue测度,则$(S^1,\mathscr{B}(S^1),\mu,T)$是遍历的极小系统.
 \end{example}
+\pause
+\begin{block}
+
+这样$T^kx$到达某个区间$I$的频率$$\lim_{n\to \infty}\frac{1}{n}\sum_{k=0}^n\chi_I(T^kx)=\text{区间I的长度}$$
+
+\end{block}
 \end{frame}
 
 
@@ -140,7 +146,8 @@ $\mathcal{M}(X)$是动力系统$(X,T)$上的一个概率测度的全体.那么$u
 \begin{theorem}
 $\mathcal{M}(X)$是紧致的.
 \end{theorem}
-
+\pause
+事实上,对任意可分的$B^*$空间$\mathscr X$,任意有界列$\{f_n\}\subset \mathscr{X}^*$都存在收敛子列.
 \end{frame}
 
 \begin{frame}
@@ -204,21 +211,88 @@ $(\Omega,T)$是极小的$\Longleftrightarrow$对每个$w\in \mathcal{W}$存在$R
 \frametitle{唯一遍历的刻画}
 在符号系统中,极小性有如下的刻画:
 \begin{theorem}
-$(X,T)$是唯一遍历的\\$Longleftrightarrow$
-$\forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$逐点收敛到一个常值函数
+$(X,T)$是唯一遍历的\\
+$\Longleftrightarrow \forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$逐点收敛到一个常值函数
 \end{theorem}
 \pause
 在符号系统下的刻画:
 \begin{theorem}
-子转移$(\Omega,T)$是唯一遍历的\\$\Longleftrightarrow$ $\lim_{|w| \to \infty}{\#_v(w)\over |w |}<\infty, \forall v\in \mathcal{W}$
+子转移$(\Omega,T)$是唯一遍历的
+$\Longleftrightarrow \lim_{|w| \to \infty}\frac{\#_v(w)}{ |w |}<\infty, \forall v\in \mathcal{W}$
 \end{theorem}
+其中$\frac{\#_v(w)}{|w|}$表示$v\text{在}w\text{中出现的次数}$
 \end{frame}
 
 \begin{frame}
 \frametitle{两个引理}
+\begin{lemma}
+设$w\in A^{\mathbb{Z}}$,如果存在$r$满足
+$$\#\{v\in Sub(w):|v|=r\}\leq r$$
+那么$w$一定是周期的.
+\end{lemma}
+\pause
+\begin{lemma}
+\label{l:1}
+设$(\Omega,T)$是极小的子转移.那么下面的条件等价：
+\begin{enumerate}
+\item $(\Omega,T)$是非周期的；
+\item $m(n)\rightarrow \infty,n\rightarrow \infty$.
+\end{enumerate}
+\end{lemma}
 \end{frame}
+
+
+
 \begin{frame}
-\frametitle{}
+\frametitle{一致可加遍历定理}
+\begin{theorem}
+\begin{itemize}
+\item $\forall f\in C(X)$,$\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)$一致收敛到一个常值函数;
+\item 存在$\mu\in\mathcal{M}(X,T)$,使得对任意$f\in C(X)$及$x\in X,\frac{1}{n}\sum_{k=0}^{n-1}f(T^kx)\rightarrow \int\!f \, \mathrm d \mu$
+\item $T$是唯一遍历的.
+\end{itemize}
+\end{theorem}
+\pause
+\begin{theorem}
+\begin{enumerate}
+\item $(\Omega,T)$是唯一遍历的；
+\item 极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在,对每个取值于Banach空间的可加函数.
+\item 极限$\lim_{|w|\to \infty}\frac{1}{n}\sum_{j=1}^n{f(T^jw)}$存在且对$w\in \Omega$一致收敛,其中$f$是取值于Banach空间的连续函数.
+\end{enumerate}
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{一致次可加遍历定理}
+\begin{definition}
+以下是论文中要用的等价概念.
+\begin{description}
+\item[(SET)] 对任意次可加的函数$F$,极限$\lim_{|w|\to \infty}{F(w)\over |w|}$存在且等于$\inf_{n\in \mathbb{N}}F^{(n)}$,其中$F^{(n)}=\max\{{F(v)\over |v|}:v\in\mathcal{W},|v|=n\}$
+\item[(PQ)] 存在一个常数$C>0$满足$\nu(v)\geq C$对任意的$v\in \mathcal{W}$.其中
+$$l_v(w)=(w\text{中}v\text{的不相交拷贝的最大数})\cdot |v|$$
+$$\nu(v)=\liminf_{|w|\to \infty}{l_v(w)\over |w|}$$
+\end{description}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\begin{theorem}
+\frametitle{一致次可加遍历定理}
+$(\Omega,T)$是极小的子转移.那么下列条件是等价的：
+\begin{itemize}
+\item 子转移$(\Omega,T)$满足$(SET)$；
+\item 子转移$(\Omega,T)$满足$(PQ)$.
+\end{itemize}
+\end{theorem}
+\end{frame}
+
+\section*{致谢}
+\subsection*{致谢}
+\begin{frame}
+\begin{center}
+\huge {谢谢!} 
+\end{center}
 \end{frame}
 
 \end{document} 
